@@ -1,4 +1,19 @@
 ﻿<body>
+    <style>
+        #myProgress {
+            width: 100%;
+            background-color: grey;
+        }
+
+        #myBar {
+            width: 0%;
+            height: 30px;
+            background-color: #04AA6D;
+            text-align: center; /* To center it horizontally (if you want) */
+            line-height: 30px; /* To center it vertically */
+            color: white;
+        }
+    </style>
 
     <h1>JavaScript Progress Bar</h1>
 
@@ -7,102 +22,42 @@
     </div>
 
     <br>
-    <button onclick="move()">Click Me</button>
+    
 
     <script>
         var i = 0;
-        function move() {
-            if (i == 0) {
+        function onPageLoad() 
+        {
+            if (i == 0) 
+            {
                 i = 1;
-                var numSegments = 10;
+                var j = 0;
+                //replace the testArray with the validation of entries in the database; or maybe comparing to the entries completed from Lindsey and Elise's chart
+                var testArray = [1,2,3,4,5,6,7];
                 var elem = document.getElementById("myBar");
                 var width = 0;
-                var id = setInterval(frame, 5);
-                function frame() {
-                    if (width >= numSegments/10) {
-                        clearInterval(id);
-                        i = 0;
-                    } else {
-                        width++;
-                        elem.style.width = width + "%";
-                        elem.innerHTML = width + "%";
-                    }
-                    if (width >= numSegments / 10) {
-                        clearInterval(id);
-                        i = 0;
-                    } else {
-                        width++;
-                        elem.style.width = width + "%";
-                        elem.innerHTML = width + "%";
-                    }
-                    if (width >= numSegments / 10) {
-                        clearInterval(id);
-                        i = 0;
-                    } else {
-                        width++;
-                        elem.style.width = width + "%";
-                        elem.innerHTML = width + "%";
-                    }
-                    if (width >= numSegments / 10) {
-                        clearInterval(id);
-                        i = 0;
-                    } else {
-                        width++;
-                        elem.style.width = width + "%";
-                        elem.innerHTML = width + "%";
-                    }
-                    if (width >= numSegments / 10) {
-                        clearInterval(id);
-                        i = 0;
-                    } else {
-                        width++;
-                        elem.style.width = width + "%";
-                        elem.innerHTML = width + "%";
-                    }
-                    if (width >= numSegments / 10) {
-                        clearInterval(id);
-                        i = 0;
-                    } else {
-                        width++;
-                        elem.style.width = width + "%";
-                        elem.innerHTML = width + "%";
-                        if (width >= numSegments / 10) {
+                var id = setInterval(frame, 1);
+                function frame()
+                {
+                    // update the .length once connected to database
+                    while (j < testArray.length)
+                    {
+                        if (width >= 100) {
                             clearInterval(id);
                             i = 0;
-                        } else {
-                            width++;
+                        }
+                        else {
+                            width = width + 10;
                             elem.style.width = width + "%";
                             elem.innerHTML = width + "%";
                         }
-                        if (width >= numSegments / 10) {
-                            clearInterval(id);
-                            i = 0;
-                        } else {
-                            width++;
-                            elem.style.width = width + "%";
-                            elem.innerHTML = width + "%";
-                        }
-                        if (width >= numSegments / 10) {
-                            clearInterval(id);
-                            i = 0;
-                        } else {
-                            width++;
-                            elem.style.width = width + "%";
-                            elem.innerHTML = width + "%";
-                        }
-                        if (width >= numSegments / 10) {
-                            clearInterval(id);
-                            i = 0;
-                        } else {
-                            width++;
-                            elem.style.width = width + "%";
-                            elem.innerHTML = width + "%";
-                        }
+                        j++;
+                    }
 
-                    }
                 }
             }
         }
+        window.onload = onPageLoad();
     </script>
 
 </body>
