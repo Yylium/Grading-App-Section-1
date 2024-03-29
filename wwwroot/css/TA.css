@@ -1,0 +1,98 @@
+﻿/* Base Styles for TA Dashboard and Pages */
+.TaSDashboard, .TaSAssignedGroups, .TaSLogin {
+    width: 1280px;
+    height: 832px;
+    position: relative;
+    background: var(--color-nearly-white);
+}
+
+.Screenshot31 {
+    width: 1280px;
+    height: 96px;
+    position: absolute;
+    top: 0px;
+}
+
+/* TA Navigation Sidebar */
+.TaSNav {
+    width: 190px;
+    height: 736px;
+    padding: 16px 54px;
+    position: absolute;
+    top: 96px;
+    background: var(--color-nearly-white);
+    border-right: 3px solid var(--color-dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 36px;
+}
+
+/* Progress Bar and Graded Submissions */
+.Rectangle5 {
+    background: var(--color-light-gray-blue);
+    border-radius: 15px;
+}
+
+.Rectangle6, .NotGradedSubmission .Rectangle5, .GradedSubmission .Rectangle5 {
+    background: var(--color-sky-blue);
+}
+
+/* Text Styles */
+.HelloAndrewIs414Ta, .Section1Group9 {
+    color: var(--color-gray-blue);
+    font-size: 36px;
+}
+
+.SubmissionsGraded, .NotYetGraded, .Dashboard, .Nav2 {
+    color: var(--color-gray-blue-light);
+    font-size: 15px;
+}
+
+/* Submission Cards */
+.DashboardCard, .Group39, .Group41, .Group42, .Group43, .Group44, .Group45, .Group46, .Group47 {
+    background: var(--color-light-gray-blue);
+    border-radius: 15px;
+}
+
+/* Login Box Styling */
+.LoginBox .Rectangle1 {
+    background: var(--color-nearly-white);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border: 2px solid var(--color-dark-blue);
+}
+
+/* Buttons */
+.Button1 .Rectangle4 {
+    background: var(--color-sky-blue);
+    border-radius: 5px;
+    border: 1px solid var(--color-dark-blue);
+}
+
+/* Grading Rubric Boxes */
+.Group51, .Group55, .Group53, .Group54 {
+    border: 1px solid var(--color-dark-blue);
+    border-radius: 15px;
+    background: var(--color-nearly-white);
+}
+
+/* Utility and Flexbox Classes */
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+/* Add more specific styles as needed for other elements */

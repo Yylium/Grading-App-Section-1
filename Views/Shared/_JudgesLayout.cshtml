@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,30 +6,32 @@
     <title>@ViewData["Title"] - Grading_App_Section_1</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/judges.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Grading_App_Section_1.styles.css" asp-append-version="true" />
 </head>
 <body>
     <div class="container-fluid">
-            <div class="row">
+        <div class="row">
                 <!-- Navbar -->
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                     <div class="sidebar-sticky">
-                    <div class="row align-items-center">
-                        <div class="col-12 text-center">
-                            <img src="~/nexuslogo.jpg" class="img-fluid" alt="Logo">
-                        </div>
-                        <div class="col-12 text-center">
-                            <h6 class="mt-3">Dashboard</h6>
-                        </div>
-                        <ul class="nav flex-column justify-content-center align-items-center">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">GitHub</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Info</a>
-                            </li>
-                            <!-- Add more navbar links here -->
-                        </ul>
+                        <div class="row align-items-center">
+                            <div class="col-12 text-center">
+                                <img src="~/nexuslogo.jpg" class="img-fluid" alt="Logo">
+                            </div>
+                            
+                            <div class="col-12 text-center">
+                                <h6 class="mt-3">Dashboard</h6>
+                            </div>
+                            <ul class="nav flex-column justify-content-center align-items-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Group 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Group 2</a>
+                                </li>
+                                <!-- Add more navbar links here -->
+                            </ul>
                         </div>
                     </div>
                 </nav>
@@ -47,4 +49,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
