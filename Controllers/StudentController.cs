@@ -15,5 +15,27 @@ namespace Grading_App_Section_1.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Form()
+        {
+            ViewBag.Students = _repo.Students
+                .OrderBy(x => x.first_name)
+                .ToList();
+
+            return View("Form");
+        }
+
+        [HttpPost]
+        public IActionResult Form(Student_Group s)
+        {
+            if (ModelState.IsValid) 
+            {
+                _repo.Student_Groups.Add(s);
+                return View(s);
+            }
+            
+            return View(); 
+        }
     }
 }
