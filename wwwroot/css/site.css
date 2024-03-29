@@ -1,124 +1,128 @@
 /* Color Palette */
 :root {
-    --color-dark-blue: #094067;
-    --color-bright-blue: #1C74DB;
-    --color-sky-blue: #3DA9FC; /* FIGMA button color */
-    --color-dark-gray: #4D4D4D;
-    --color-gray-blue: #5F6C7B; /* Paragraph color */
-    --color-light-blue: #72BCD6;
-    --color-soft-blue: #80C8E8;
-    --color-pale-blue: #90B4CE; /* Secondary color */
-    --color-ice-blue: #A0DAFB;
-    --color-light-gray: #CDCDCD;
-    --color-pale-gray: #D9E4EC; /* Secondary muted */
-    --color-almost-white: #EDEDED;
-    --color-bright-red: #EF4565; /*Teriary */
-    --color-nearly-white: #FFFFFE; /* FIGMA background color, button text */
-    --color-black-transparent: rgba(0, 0, 0, 0.25);
+  --color-dark-blue: #094067;
+  --color-bright-blue: #1c74db;
+  --color-sky-blue: #3da9fc; /* FIGMA button color */
+  --color-dark-gray: #4d4d4d;
+  --color-gray-blue: #5f6c7b; /* Paragraph color */
+  --color-light-blue: #72bcd6;
+  --color-soft-blue: #80c8e8;
+  --color-pale-blue: #90b4ce; /* Secondary color */
+  --color-ice-blue: #a0dafb;
+  --color-light-gray: #cdcdcd;
+  --color-pale-gray: #d9e4ec; /* Secondary muted */
+  --color-almost-white: #ededed;
+  --color-bright-red: #ef4565; /*Teriary */
+  --color-nearly-white: #fffffe; /* FIGMA background color, button text */
+  --color-black-transparent: rgba(0, 0, 0, 0.25);
 }
 
 /* Typography */
 body {
-<<<<<<< HEAD
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: var(--color-dark-gray);
-    line-height: 1.6;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--color-dark-gray);
+  line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--color-dark-blue);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-dark-blue);
 }
 
 a {
-    color: var(--color-bright-blue);
-    text-decoration: none;
+  color: var(--color-bright-blue);
+  text-decoration: none;
 }
 
-    a:hover {
-        color: var(--color-sky-blue);
-    }
+a:hover {
+  color: var(--color-sky-blue);
+}
 
 /* Buttons */
 .button,
 button {
-    background-color: var(--color-bright-blue);
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
+  background-color: var(--color-bright-blue);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-    .button:hover,
-    button:hover {
-        background-color: var(--color-sky-blue);
-    }
+.button:hover,
+button:hover {
+  background-color: var(--color-sky-blue);
+}
 
 /* Forms */
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    border: 1px solid var(--color-light-gray);
-    border-radius: 4px;
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 4px;
 }
 
 input[type="submit"] {
-    width: auto;
-    cursor: pointer;
-    background-color: var(--color-ice-blue);
-    color: var(--color-dark-blue);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+  width: auto;
+  cursor: pointer;
+  background-color: var(--color-ice-blue);
+  color: var(--color-dark-blue);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 /* Navigation Bar */
 .navbar {
-    background-color: var(--color-dark-gray);
-    overflow: hidden;
+  background-color: var(--color-dark-gray);
+  overflow: hidden;
 }
 
-    .navbar a {
-        float: left;
-        display: block;
-        color: var(--color-almost-white);
-        text-align: center;
-        padding: 14px 20px;
-        text-decoration: none;
-    }
+.navbar a {
+  float: left;
+  display: block;
+  color: var(--color-almost-white);
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
 
-        .navbar a:hover {
-            background-color: var(--color-gray-blue);
-        }
+.navbar a:hover {
+  background-color: var(--color-gray-blue);
+}
 
 /* Footer */
 footer {
-    background-color: var(--color-dark-gray);
-    color: var(--color-almost-white);
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  background-color: var(--color-dark-gray);
+  color: var(--color-almost-white);
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 /* Utility Classes */
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .mt-20 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .mb-20 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .sidebar {
@@ -128,14 +132,14 @@ footer {
   left: 0;
   z-index: 100; /* Adjust as needed */
   padding: 48px 0 0; /* Adjust padding as needed */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-sticky {
   position: relative;
   top: 0;
   height: calc(100vh - 48px); /* Adjust height as needed */
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable navbar if content exceeds the height */
 }
@@ -145,7 +149,8 @@ footer {
     position: static;
     height: auto;
     padding-top: 48px; /* Adjust padding as needed */
-  }}
+  }
+}
 
 .sidebar {
   position: fixed;
@@ -154,7 +159,7 @@ footer {
   left: 0;
   z-index: 100; /* Adjust as needed */
   padding: 48px 0 0; /* Adjust padding as needed */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
   border-right: 1px solid #000; /* Add black border on the right */
 }
 
@@ -162,7 +167,7 @@ footer {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable navbar if content exceeds the height */
 }
