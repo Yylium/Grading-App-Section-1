@@ -1,7 +1,7 @@
-﻿@{
+@{
     ViewData["Title"] = "Submission";
 }
-@model Student_Group
+@* Reed made this view. *@
 
 <form method="post" action="YourController/YourAction" class="container mt-5">
     <div class="text-center">
@@ -9,12 +9,12 @@
         <br />
         <br />
         <div class="input-group mb-3">
-            <input type="text" name="githubLink" class="form-control" placeholder="Paste your group’s GitHub link here" aria-label="Group's GitHub Link" aria-describedby="basic-addon2">
+            <input type="text" name="githubLink" class="form-control" placeholder="Edit your group’s GitHub link here" aria-label="Group's GitHub Link" aria-describedby="basic-addon2">
             <div class="input-group-append">
                 @*                 <i class="bi bi-trash"></i>
                 *@                <button class="btn btn-danger" type="delete">Delete icon</button>
                 @*                 <i class="bi bi-pencil"></i><
-                *@                <button class="btn btn-secondary" type="button">Edit icon</button>
+                *@                <button class="btn btn-info" type="button">Submit changes icon</button>
             </div>
         </div>
         <br />

@@ -11,9 +11,25 @@ namespace Grading_App_Section_1.Controllers
         {
             _repo = temp;
         }
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Home/Student/LinkSubmission.cshtml");
+        }
+        // Build Controllers for Edit and Delete
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            
+            return View("~/Views/Home/Student/Edit.cshtml");
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Student_Group groupInfo)
+        {
+            
+            
+            return View("~/Views/Home/Student/Edit.cshtml");
         }
     }
 }
