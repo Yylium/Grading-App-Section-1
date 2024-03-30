@@ -1,10 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Submission";
 }
+@model Grading_App_Section_1.Models.Student
 
 <form method="post" action="YourController/YourAction" class="container mt-5">
     <div class="text-center">
-        <h1 class="display-4">Hello "Model.StudentName"</h1>
+        <h1 class="display-4">Hello @Model.first_name</h1>
         <br />
         <br />
         <div class="input-group mb-3">

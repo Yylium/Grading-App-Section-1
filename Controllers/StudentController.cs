@@ -17,17 +17,13 @@ namespace Grading_App_Section_1.Controllers
         }
 
         [HttpGet]
-        public IActionResult Form()
+        public IActionResult LinkSubmission()
         {
-            ViewBag.Students = _repo.Students
-                .OrderBy(x => x.first_name)
-                .ToList();
-
-            return View("Form");
+            return View("LinkSubmission");
         }
 
         [HttpPost]
-        public IActionResult Form(Student_Group s)
+        public IActionResult LinkSubmission(Student_Group s)
         {
             if (ModelState.IsValid) 
             {
