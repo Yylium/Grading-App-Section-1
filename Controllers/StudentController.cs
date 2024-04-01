@@ -11,11 +11,25 @@ namespace Grading_App_Section_1.Controllers
         {
             _repo = temp;
         }
+        
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult LinkSubmission()
         {
             return View("~/Views/Home/Student/LinkSubmission.cshtml");
         }
+
+        [HttpPost]
+        public IActionResult LinkSubmission(Student_Group s)
+        {
+            if (ModelState.IsValid) 
+            {
+                _repo.Student_Groups.Add(s);
+                return View(s);
+            }
+            
+            return View(); 
+        }
+        
         // Build Controllers for Edit and Delete
         [HttpGet]
         public IActionResult Edit()
@@ -30,24 +44,6 @@ namespace Grading_App_Section_1.Controllers
             
             
             return View("~/Views/Home/Student/Edit.cshtml");
-        }
-
-        [HttpGet]
-        public IActionResult LinkSubmission()
-        {
-            return View("LinkSubmission");
-        }
-
-        [HttpPost]
-        public IActionResult LinkSubmission(Student_Group s)
-        {
-            if (ModelState.IsValid) 
-            {
-                _repo.Student_Groups.Add(s);
-                return View(s);
-            }
-            
-            return View(); 
         }
     }
 }
