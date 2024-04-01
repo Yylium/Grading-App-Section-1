@@ -6,7 +6,7 @@ namespace Grading_App_Section_1.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return null;
         }
     }
 }
