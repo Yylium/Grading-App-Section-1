@@ -5,9 +5,9 @@ namespace Grading_App_Section_1.Controllers
 {
     public class TAController : Controller
     {
-        private EFGradingAppRepository _repo;
+        private IGradingAppRepository _repo;
 
-        public TAController(EFGradingAppRepository temp)
+        public TAController(IGradingAppRepository temp)
         {
             _repo = temp;
         }

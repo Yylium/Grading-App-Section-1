@@ -1,14 +1,15 @@
 using Grading_App_Section_1.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Grading_App_Section_1.Controllers
 {
     public class HomeController : Controller
     {
-        public EFGradingAppRepository _repo;
+        private IGradingAppRepository _repo;
 
-        public HomeController(EFGradingAppRepository temp)
+        public HomeController(IGradingAppRepository temp)
         {
             _repo = temp;
         }

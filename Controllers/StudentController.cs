@@ -5,9 +5,9 @@ namespace Grading_App_Section_1.Controllers
 {
     public class StudentController : Controller
     {
-        private EFGradingAppRepository _repo;
+        private IGradingAppRepository _repo;
 
-        public StudentController(EFGradingAppRepository temp)
+        public StudentController(IGradingAppRepository temp)
         {
             _repo = temp;
         }

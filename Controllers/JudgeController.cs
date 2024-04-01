@@ -5,9 +5,9 @@ namespace Grading_App_Section_1.Controllers
 {
     public class JudgeController : Controller
     {
-        private EFGradingAppRepository _repo;
+        private IGradingAppRepository _repo;
 
-        public JudgeController(EFGradingAppRepository temp)
+        public JudgeController(IGradingAppRepository temp)
         {
             _repo = temp;
         }
