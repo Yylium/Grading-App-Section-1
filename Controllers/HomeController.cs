@@ -6,13 +6,6 @@ namespace Grading_App_Section_1.Controllers
 {
     public class HomeController : Controller
     {
-        private IGradingAppRepository _repo;
-
-        public HomeController(IGradingAppRepository temp)
-        {
-            _repo = temp;
-        }
-
         public IActionResult Index()
         {
             return View();
