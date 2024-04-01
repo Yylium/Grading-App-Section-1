@@ -39,39 +39,37 @@ namespace Grading_App_Section_1.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit_ta()
+        public IActionResult Edit_ta(string id)
         {
-/*           var taToEdit = _repo.TAs
+           var taToEdit = _repo.TA
             .Single(x => x.ta_netid == id);
 
-            ViewBag.Categories = _repo.Categories
-                .OrderBy(x => x.CategoryName)
-                .ToList();*/
             return View("ta_form", taToEdit);
 
         }
+
         [HttpPost]
         public IActionResult Edit_ta(TA updatedTa)
         {
-/*            _repo.UpdateTask(updatedTa);
-*/
+            _repo.Update(updatedTa);
+            _repo.SaveChanges();
             return RedirectToAction("ta_index");
         }
 
         [HttpGet]
-        public IActionResult Delete_ta(int id)
+        public IActionResult Delete_ta(string id)
         {
-/*            var taToDelete = _repo.TAs
-                .Single(x => x.ta_netid == id);*/
+            var taToDelete = _repo.TA
+                .Single(x => x.ta_netid == id);
 
-            return View("ta_confirmation", taToDelete);
+            return View("ta_index");
         }
 
         [HttpPost]
         public IActionResult Delete_ta(TA ta_netid)
         {
-/*            _repo.RemoveTask(task);
-*/
+            _repo.TAs.Remove(ta_netid);
+            _repo.SaveChanges();
             return RedirectToAction("ta_index");
         }
 
