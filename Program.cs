@@ -5,13 +5,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<GradingAppContext>(options => {
-    options.UseSqlite(builder.Configuration["ConnectionString:GradingAppConnection"]);
+
+builder.Services.AddDbContext<GradingAppContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:GradingAppConnection"]);
 });
 
-builder.Services.AddHeroicons(builder.Configuration);
 builder.Services.AddScoped<IGradingAppRepository, EFGradingAppRepository>();
 
+builder.Services.AddHeroicons(builder.Configuration);
 
 var app = builder.Build();
 
