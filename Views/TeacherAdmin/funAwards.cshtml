@@ -3,6 +3,9 @@
 *@
 @{
 }
+@{
+    Layout = "_TeachAdminLayout";
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,11 +28,11 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var award in Model)
+        @*     @foreach(var award in Model) *@
             {
                 <tr>
-                    <td>@award.GroupName</td>
-                    <td>@award.AwardName</td>
+                    <td>GroupName</td>
+                    <td>AwardName</td>
                 </tr>
             }
         </tbody>
