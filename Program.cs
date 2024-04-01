@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
-builder.Services.AddScoped<IGradingAppRepository, EFGradingAppRepository>();
+//builder.Services.AddScoped<IGradingAppRepository, EFGradingAppRepository>();
 
 builder.Services.AddHeroicons(builder.Configuration);
 
