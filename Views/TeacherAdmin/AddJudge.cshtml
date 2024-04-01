@@ -1,34 +1,41 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
 @model Judge
-<h1>Add Judge:</h1>
-
-<form method="post">
-    <input type='hidden' asp-for="judge_id">
-    <label asp-for="first_name">First Name:</label>
-    <input asp-for="first_name" class="form-control" />
-    <br />
-    <label asp-for="last_name">Last Name:</label>
-    <input asp-for="last_name" class="form-control" />
-    <br />
-@*     <label asp-for="judge_pass">Password:</label>
-    <input asp-for="judge_pass" class="form-control" /> *@
-    <br />
-@*     <label>Current Room Assignment: </label>
-    <select asp-for="room" class="form-control">
-        <option value="">Select a Room</option>
-        @foreach (Category c in ViewBag.Categories)
-        {
-            <option value="@c.CategoryID">@c.CategoryName</option>
-        }
-    </select> *@
-    <br />
-    <button type="submit" class="btn btn-primary">Add</button>
-    <div asp-validation-summary="All"></div>
 
 
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h1>Add Judge:</h1>
+
+            <form method="post">
+                <input type='hidden' asp-for="judge_id">
+                <label asp-for="first_name">First Name:</label>
+                <input asp-for="first_name" class="form-control" />
+                <br />
+                <label asp-for="last_name">Last Name:</label>
+                <input asp-for="last_name" class="form-control" />
+                <br />
+                @*     <label asp-for="judge_pass">Password:</label>
+                <input asp-for="judge_pass" class="form-control" /> *@
+                <br />
+                @*     <label>Current Room Assignment: </label>
+                <select asp-for="room" class="form-control">
+                <option value="">Select a Room</option>
+                @foreach (Category c in ViewBag.Categories)
+                {
+                <option value="@c.CategoryID">@c.CategoryName</option>
+                }
+                </select> *@
+                <br />
+                <button type="submit" class="btn btn-primary">Add</button>
+                <div asp-validation-summary="All"></div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
 
