@@ -3,4 +3,4 @@
 ### - Devin Christensen: TA
 ### - Cassidy Ellis: Teach/Admin
 ### - Alec Peal: Judges
-### - Elaina Halls: Student (edited) 
+### - Elaina Halls: Student

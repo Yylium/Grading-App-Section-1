@@ -15,5 +15,25 @@ namespace Grading_App_Section_1.Controllers
         {
             return null;
         }
+        public IActionResult Schedule()
+        {
+            return null;
+        }
+
+        public IActionResult Survey()
+        {
+            return null;
+        }
+
+        public IActionResult Dashboard()
+        {
+            return null;
+        }
+        
+        public IActionResult Rankings()
+        {
+            return null;
+        }
+        
     }
 }
