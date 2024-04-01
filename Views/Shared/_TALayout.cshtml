@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="~/Grading_App_Section_1.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
+        <div class="row flex-grow-sm-1 flex-grow-0">
                 <!-- Navbar -->
-                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <nav class="col-md-2 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3 d-none d-md-block bg-light" style="padding:50px; box-shadow:1px;">
                     <div class="sidebar-sticky">
                         <div class="row align-items-center">
                             <div class="col-12 text-center">
@@ -49,8 +49,9 @@
                
 
                 <!-- Page content -->
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                    @RenderBody()
+            <main role="main" class="col overflow-auto h-100">
+                <div>@RenderBody()</div>
+                    
                 </main>
                 
         </div>
