@@ -14,10 +14,6 @@ builder.Services.AddScoped<IGradingAppRepository, EFGradingAppRepository>();
 
 builder.Services.AddHeroicons(builder.Configuration);
 
-
-
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
