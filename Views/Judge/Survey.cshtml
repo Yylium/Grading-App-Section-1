@@ -3,20 +3,159 @@
 *@
 @{
 }
-<h1>group name</h1>
-<h2>group members?</h2>
+
+<style>
+    .rating-container {
+        margin-bottom: 20px;
+    }
+
+    .rating {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .rating input[type="radio"] {
+            color: #90B4CE;
+            display: none;
+        }
+
+        .rating label {
+            cursor: pointer;
+            font-size: 24px;
+            color: #90B4CE;
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rating input[type="radio"]:checked + label {
+            border-radius: 50%;
+            background-color: #3DA9FC;
+            color: white;
+            width: 30px; /* Set width and height to maintain circle shape */
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    .textarea-wrapper {
+        width: 715px; /* Set the width of the input field wrapper */
+        height: 20px;
+    }
+
+    input[type="text"] {
+        width: 100%; /* Take up the full width of the wrapper */
+        resize: none; /* Prevent resizing horizontally */
+        overflow-y: hidden; /* Hide vertical scroll bar */
+        border: 1px solid #ccc; /* Add border for styling */
+    }
+</style>
+
 <body>
     <div class="row m-1 p-1">
-        <div class="col-3">
+        <div class="col-2">
             <p>dashboard?</p>
         </div>
+        <div class="container col-8">
+            <h1>group name</h1>
+            <h2>group members?</h2>
+            <div class="card m-1 p-3 bg-light">
+                <!-- Show all the required fields. The price will be in the top right and a different color-->
+                <h4 style="text-align: center; color: #094067">Overall System Quality and Client Satisfaction</h4>
+                <ol>
+                    <li><h5>How effective was the team in building a solution <span style="font-weight: bold">that meets the client's needs?</span></h5></li>
+                </ol>
+                <ul style="font-size: medium">
+                    <li>Items that may factor into your scoring of this item:</li>
+                    <li>The Team Understands the Requirements and Challenges Facing the Client</li>
+                    <li>System Meets Client's Needs</li>
+                    <li>The Solution is Realistic and Viable</li>
+                    <li>You are Confident in the Solution and Team</li>
+                    <li>Client Should Engage this Team for Continued Implementation of the Solution</li>
+                </ul>
+                <br />
+                <div>
+                    <p style="color: #90B4CE; text-align: center;">
+                        <label for="rating1" style="width: 80px; display: inline-block; justify-content: space-between;">Not Effective</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label for="rating4" style="width: 120px; display: inline-block; justify-content: space-between;">Slightly Effective</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label for="rating7" style="width: 100px; display: inline-block; justify-content: space-between;">Moderately Effective</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label for="rating10" style="width: 130px; display: inline-block; justify-content: space-between;">Extremely Effective</label>
+                    <p />
+                </div>
+                <form id="ratingForm">
+                    <div class="rating-container">
+
+                        <div class="rating">
+                            <input type="radio" id="rating1" name="rating" value="1" />
+                            <label for="rating1">1</label>
+                            <input type="radio" id="rating2" name="rating" value="2" />
+                            <label for="rating2">2</label>
+                            <input type="radio" id="rating3" name="rating" value="3" />
+                            <label for="rating3">3</label>
+                            <input type="radio" id="rating4" name="rating" value="4" />
+                            <label for="rating4">4</label>
+                            <input type="radio" id="rating5" name="rating" value="5" />
+                            <label for="rating5">5</label>
+                            <input type="radio" id="rating6" name="rating" value="6" />
+                            <label for="rating6">6</label>
+                            <input type="radio" id="rating7" name="rating" value="7" />
+                            <label for="rating7">7</label>
+                            <input type="radio" id="rating8" name="rating" value="8" />
+                            <label for="rating8">8</label>
+                            <input type="radio" id="rating9" name="rating" value="9" />
+                            <label for="rating9">9</label>
+                            <input type="radio" id="rating10" name="rating" value="10" />
+                            <label for="rating10">10</label>
+                        </div>
+                    </div>
+                    <div class="m-2">
+                        <h5>Do you have any complements or critiques for the group about the <span style="font-weight: bold">Overall System Quality and Client Satisfaction?</span></h5>
+                    </div>
+                    <div class="textarea-wrapper">
+                        <input type="text" name="textbox_name" id="textbox_id" placeholder="Give feedback here" oninput="adjustTextareaHeight(this)" />
+                    </div>
+                    <br />
+                    <button type="submit">Submit</button>
+                </form>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- furthest column to the right-->
+        <div class="container col-2">
+            <div class="card">
+                <div class="card-body">
+                    Small Card Content
+                </div>
+            </div>
+            <!-- Long card with text input below -->
+            <div class="card mt-2">
+                <!-- mt-3 adds some margin to the top -->
+                <div class="card-body">
+                    <div class="mb-2">
+                        <!-- mb-3 adds some margin to the bottom -->
+                        <label for="textInput" class="form-label">Text Input</label>
+                        <input type="text" class="form-control" id="textInput" placeholder="Enter text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of last column-->
     </div>
-    <div class="container col-6">
-        <main role="main" class="pb-3">
-            <p>this is for my rubric</p>
-        </main>
-    </div>
-    <div class="container col-3">
-        <p>scoring sidebar</p>
-    </div>
+    
 </body>
