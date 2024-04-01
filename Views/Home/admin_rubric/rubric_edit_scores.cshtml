@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model
+
+<h1>Add Objective</h1>
+
+<form method="post">
+    <select asp-for="max_points">
+        <option value="">Possible Point(s)</option>
+        @for (int i = 1; i <= 10; i++)
+        {
+        <option value="@i">@i</option>
+        }
+    </select>
+    <br /><br />
+    <label asp-for="rubric_items_text">Objective Name</label>
+    <input asp-for="rubric_items_text" />
+    <br /><br />
+    <label asp-for="rubric_items_description">Description</label>
+    <input asp-for="rubric_items_description" />
+    <br /><br />
+    <button type="submit">Save</button>
+</form>
