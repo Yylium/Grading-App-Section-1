@@ -5,34 +5,34 @@ namespace Grading_App_Section_1.Controllers
 {
     public class JudgeController : Controller
     {
-        private IGradingAppRepository _repo;
+        private EFGradingAppRepository _repo;
 
-        public JudgeController(IGradingAppRepository temp)
+        public JudgeController(EFGradingAppRepository temp)
         {
             _repo = temp;
         }
         public IActionResult Index()
         {
-
+            return null;
         }
         public IActionResult Schedule()
         {
-            return View();
+            return null;
         }
 
         public IActionResult Survey()
         {
-            return View();
+            return null;
         }
 
         public IActionResult Dashboard()
         {
-            return View();
+            return null;
         }
         
         public IActionResult Rankings()
         {
-            return View();
+            return null;
         }
         
     }

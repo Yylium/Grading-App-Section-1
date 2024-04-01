@@ -6,9 +6,9 @@ namespace Grading_App_Section_1.Controllers
 {
     public class HomeController : Controller
     {
-        private IGradingAppRepository _repo;
+        public EFGradingAppRepository _repo;
 
-        public HomeController(IGradingAppRepository temp)
+        public HomeController(EFGradingAppRepository temp)
         {
             _repo = temp;
         }

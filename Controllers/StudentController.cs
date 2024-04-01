@@ -5,15 +5,15 @@ namespace Grading_App_Section_1.Controllers
 {
     public class StudentController : Controller
     {
-        private IGradingAppRepository _repo;
+        private EFGradingAppRepository _repo;
 
-        public StudentController(IGradingAppRepository temp)
+        public StudentController(EFGradingAppRepository temp)
         {
             _repo = temp;
         }
         public IActionResult Index()
         {
-            return View();
+            return null;
         }
     }
 }
