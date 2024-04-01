@@ -1,0 +1,100 @@
+﻿/* Base Styles for Student Pages */
+.StudentLogin, .LinkSubmission, .Form {
+    width: 1280px;
+    height: 832px;
+    position: relative;
+    background: var(--color-nearly-white);
+}
+
+/* Navigation Sidebar for Students */
+.StudentNav {
+    width: 190px;
+    height: 736px;
+    padding: 16px 54px;
+    position: absolute;
+    background: var(--color-nearly-white);
+    border-right: 3px solid var(--color-dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 36px;
+}
+
+/* Login Box Styling */
+.LoginBox {
+    width: 310px;
+    height: 275px;
+    position: absolute;
+    background: var(--color-nearly-white);
+    box-shadow: 0px 4px 4px var(--color-black-transparent);
+    border-radius: 15px;
+    border: 2px solid var(--color-dark-blue);
+}
+
+/* Input Fields within Login and Form Boxes */
+.Rectangle2, .Group27 .Rectangle {
+    border-radius: 5px;
+    border: 1px solid var(--color-dark-blue);
+}
+
+/* Button Styling */
+.Button1 .Rectangle4, .Group33 .Rectangle6 {
+    background: var(--color-sky-blue);
+    border-radius: 5px;
+    border: 1px solid var(--color-dark-blue);
+}
+
+.Button, .Group33 .Ok {
+    text-align: center;
+    color: var(--color-nearly-white);
+    font-size: 15px;
+}
+
+/* Submission and Deletion Box Styling */
+.DeleteBox .Rectangle5, .SubmissionBox .Rectangle5 {
+    background: var(--color-almost-white);
+    box-shadow: 0px 4px 4px var(--color-black-transparent);
+    border-radius: 2px;
+    border: 2px solid var(--color-light-gray);
+}
+
+/* Text Styles for Various Components */
+.HelloAlexander, .YourInformation {
+    color: var(--color-gray-blue);
+    font-size: 36px;
+}
+
+/* Specific Styling for GitHub Links and Info Section */
+.Github, .Info {
+    text-align: center;
+    font-size: 15px;
+}
+
+.Github {
+    color: var(--color-sky-blue);
+    font-weight: bold;
+}
+
+.Info {
+    color: var(--color-dark-blue);
+}
+
+/* Utility Classes for Flexbox Layout */
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+/* Add more specific styles as needed for unique elements found within student pages */
