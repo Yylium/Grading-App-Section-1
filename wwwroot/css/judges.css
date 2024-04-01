@@ -1,0 +1,98 @@
+﻿/* Judges Navigation Sidebar */
+.JudgesNav {
+    width: 190px;
+    height: 736px;
+    padding: 16px 54px;
+    position: absolute;
+    background: var(--color-nearly-white);
+    border-right: 3px solid var(--color-dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 36px;
+}
+
+    /* Judges Navigation Active State */
+    .JudgesNav .Nav1 {
+        color: var(--color-sky-blue);
+        font-weight: bold;
+    }
+
+    /* Judges Navigation Non-Active States */
+    .JudgesNav div {
+        text-align: center;
+        color: var(--color-dark-blue);
+        font-size: 15px;
+        word-wrap: break-word;
+    }
+
+/* Survey Frame and Components */
+.SurveyFrame, .DashboardComponent, .JudgeSLogin, .Surveyblock {
+    border-radius: 15px;
+    border: 2px solid var(--color-dark-blue);
+    background: var(--color-nearly-white);
+    box-shadow: 0px 4px 4px var(--color-black-transparent);
+}
+
+.SurveyFrame {
+    position: absolute;
+    width: 1008px;
+    height: 697px;
+}
+
+/* Input Fields and Feedback Boxes */
+input[type="text"], textarea, .Rectangle3 {
+    border: 1px solid var(--color-dark-blue);
+    background: var(--color-nearly-white);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Specific Styles for Texts and Blocks within Survey and Dashboard */
+.HowEffectiveWasTheTeamInBuildingASolutionThatMeetsTheClientSNeeds,
+.DoYouHaveAnyComplementsOrCritiquesForTheGroupAboutTheOverallSystemQualityAndClientSatisfaction {
+    color: var(--color-dark-blue);
+    font-size: 20px;
+}
+
+/* Login and General Form Styling */
+.LoginBox, .Group2, .Group3 {
+    background: var(--color-nearly-white);
+    border: 2px solid var(--color-dark-blue);
+    border-radius: 15px;
+}
+
+/* Specific Styling for Buttons and Interactive Elements */
+.button, button, .Rectangle4 {
+    background-color: var(--color-sky-blue);
+    color: var(--color-nearly-white);
+    border: 1px solid var(--color-dark-blue);
+    border-radius: 5px;
+}
+
+/* Adjustments for Group Cards and Rank Bubbles */
+.GroupCard, .RankBubble {
+    border: 2px solid var(--color-pale-blue);
+    background: var(--color-nearly-white);
+    border-radius: 15px;
+}
+
+/* Typography Adjustments for Judges Content */
+.Group1, .OverallSystemQualityAndClientSatisfaction, .PresentationRankings {
+    color: var(--color-gray-blue);
+    font-weight: bold;
+}
+
+/* Misc */
+.Screenshot31, .Screenshot32, .Screenshot33 {
+    width: 100%;
+    height: auto;
+}
+
+/* Utility Classes for Judges Pages */
+.text-center {
+    text-align: center;
+}
+
+/* Add more specific styles as needed for unique elements found within judges pages */
