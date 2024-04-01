@@ -1,14 +1,16 @@
-using Grading_App_Section_1.Models;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 
-//builder.Services.AddScoped<IGradingAppRepository, EFGradingAppRepository>();
+
 
 builder.Services.AddHeroicons(builder.Configuration);
+
+
+
+
 
 var app = builder.Build();
 
