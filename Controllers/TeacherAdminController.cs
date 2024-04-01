@@ -28,19 +28,19 @@ namespace Grading_App_Section_1.Controllers
 
         public IActionResult AddJudge()
         {
-            return View("~/Views/Team_9/AddJudge.cshtml");
+            return View("~/Views/TeacherAdmin/AddJudge.cshtml");
         }
         public IActionResult AddRoom()
         {
-            return View("~/Views/Team_9/AddRoom.cshtml");
+            return View("~/Views/TeacherAdmin/AddRoom.cshtml");
         }
         public IActionResult JudgeDash()
         {
-            return View("~/Views/Team_9/JudgeDash.cshtml");
+            return View("~/Views/TeacherAdmin/JudgeDash.cshtml");
         }
         public IActionResult AddSurveyItem()
         {
-            return View("~/Views/Team_9/AddSurveyItem.cshtml");
+            return View("~/Views/TeacherAdmin/AddSurveyItem.cshtml");
         }
 
     }
