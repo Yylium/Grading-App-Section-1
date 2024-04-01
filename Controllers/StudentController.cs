@@ -11,37 +11,8 @@ namespace Grading_App_Section_1.Controllers
         {
             _repo = temp;
         }
-        // Build Controllers for Edit and Delete
+        
         [HttpGet]
-        public IActionResult Edit()
-        {
-            
-            return View("~/Views/Home/Student/Edit.cshtml");
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Student_Group groupInfo)
-        {
-            
-            
-            return View("~/Views/Home/Student/Edit.cshtml");
-        public IActionResult Edit(Student_Group groupInfo)
-        {
-            
-            
-            return View("~/Views/Home/Student/Edit.cshtml");
-        public IActionResult Edit(Student_Group groupInfo)
-        {
-            
-            
-            return View("~/Views/Home/Student/Edit.cshtml");
-        public IActionResult Edit(Student_Group groupInfo)
-        {
-            
-            
-            return View("~/Views/Home/Student/Edit.cshtml");
-        }
-
         public IActionResult LinkSubmission()
         {
             return View("~/Views/Home/Student/LinkSubmission.cshtml");
@@ -57,6 +28,22 @@ namespace Grading_App_Section_1.Controllers
             }
             
             return View(); 
+        }
+        
+        // Build Controllers for Edit and Delete
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            
+            return View("~/Views/Home/Student/Edit.cshtml");
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Student_Group groupInfo)
+        {
+            
+            
+            return View("~/Views/Home/Student/Edit.cshtml");
         }
     }
 }
