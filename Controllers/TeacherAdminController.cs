@@ -13,7 +13,8 @@ namespace Grading_App_Section_1.Controllers
         }
         public IActionResult Dashboard()
         {
-            return View();
+            int SurveyResponses = _repo.Survey_Responses.Count();
+            return View(SurveyResponses);
         }
 
         public IActionResult JudgeSummary()
@@ -23,8 +24,6 @@ namespace Grading_App_Section_1.Controllers
             // var studentGroups = _repo.Student_Groups.ToList();
 
             var model = new Tuple<List<Schedule>, List<Judge>>(data, judges);
-
-
 
             return View(model);
         }
