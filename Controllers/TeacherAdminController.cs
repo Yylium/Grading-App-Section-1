@@ -20,9 +20,9 @@ namespace Grading_App_Section_1.Controllers
         {
             var data = _repo.Schedules.ToList();
             var judges = _repo.Judges.ToList();
-            var student_groups = _repo.Student_Groups.ToList();
+            // var studentGroups = _repo.Student_Groups.ToList();
 
-            var model = new Tuple<List<Schedule>, List<Judge>, List<Student_Group>>(data, judges, student_groups);
+            var model = new Tuple<List<Schedule>, List<Judge>>(data, judges);
 
 
 
