@@ -4,11 +4,15 @@
 @{
 }
 
+
 <link href="~/css/teacheradmin.css" rel="stylesheet" />
+
+@model List<Grading_App_Section_1.Models.Judge>
+
 
 <div style="width: 40%; background-color: lightblue; padding: 20px; margin-left: auto; margin-right: auto;">
     <div>
-        <h1>Judges</h1>
+        <h1>Judging</h1>
         <table>
             <tr>
                 <th>Room Number</th>
@@ -26,11 +30,44 @@
                 <th>Judge Name</th>
                 <th>Assigned Room</th>
             </tr>
+            @foreach (var judge in Model)
+            {
+                <tr>
+                    <td>@judge.first_name @judge.last_name</td>
+                    <!-- other columns as needed -->
+                </tr>
+            }
+            
         </table>
         <a class="btn btn-primary" asp-controller="TeacherAdmin" asp-action="AddJudge">Add Room</a>
 
     </div>
 </div>
+
+
+
+
+
+
+
+<h2>Judges List</h2>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <!-- other columns as needed -->
+    </tr>
+    @foreach (var judge in Model)
+    {
+        <tr>
+            <td>@judge.judge_id</td>
+            <td>@judge.first_name,</td>
+            <td>@judge.last_name</td>
+            <!-- other columns as needed -->
+        </tr>
+    }
+</table>
  
     
 
