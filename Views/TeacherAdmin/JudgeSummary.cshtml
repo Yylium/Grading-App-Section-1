@@ -42,15 +42,10 @@
             <tr data-href="/TeacherAdmin/JudgeView" class="hover-element">
                 <td class="bold">@s.schedule_room</td>
                 <td class="bold">
-                   
+
                     @foreach (var j in Model.Item2)
                     {
-                        @j.first_name @j.last_name
-                        @if (j != Model.Item2.Last())
-                        {
-                            @:", "
-                        }
-                                 
+                        @j.first_name @Html.Raw(" ") @j.last_name @Html.Raw(", ")
                     }
                  
                 </td>
