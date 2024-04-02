@@ -28,13 +28,14 @@
             </tr>
         </thead>
         <tbody>
-        @*     @foreach(var award in Model) *@
-            {
-                <tr>
-                    <td>GroupName</td>
-                    <td>AwardName</td>
-                </tr>
-            }
+        
+        @foreach (var Award in Model)
+        {
+            <tr>
+                <td>@Award.GroupName</td>
+                <td>@Award.AwardName</td>
+            </tr>
+        }
         </tbody>
     </table>
 </div>
