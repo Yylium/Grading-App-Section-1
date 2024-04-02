@@ -6,7 +6,7 @@
             <h1>Add Judge:</h1>
 
             <form method="post">
-                <input type='hidden' asp-for="judge_id">
+                @* <input type='hidden' asp-for="judge_id"> *@
                 @* <input type='hidden' asp-for="judge_team"> *@
 
                 <label asp-for="first_name">First Name:</label>
@@ -16,14 +16,14 @@
                 <input asp-for="last_name" class="form-control" />
                 <br />
                 <label asp-for="password_hash">Password:</label>
-                <input asp-for="password_hash" type="password" class="form-control" placeholder="firstLast" />
+                <input asp-for="password_hash" type="password" class="form-control" placeholder="ex: firstLast" />
                 <br />
                 <label>Current Room Assignment:</label>
 @*                 <select asp-for="schedule_room" class="form-control">
                     <option value="">Select a Room</option>
-                    @foreach (var room in Model.Rooms)
+                    @foreach (var room in Model.schedule_room)
                     {
-                        <option value="@room.RoomId">@room.RoomName</option>
+                        <option value="@room.schedule_id">@room.schedule_room</option>
                     }
                 </select> *@
                 <br />
