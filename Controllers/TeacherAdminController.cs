@@ -19,8 +19,13 @@ namespace Grading_App_Section_1.Controllers
         public IActionResult JudgeSummary()
         {
             var data = _repo.Schedules.ToList();
+            var judges = _repo.Judges.ToList();
 
-            return View(data);
+            var model = new Tuple<List<Schedule>, List<Judge>>(data, judges);
+
+
+
+            return View(model);
         }
 
         public IActionResult JudgeView()
