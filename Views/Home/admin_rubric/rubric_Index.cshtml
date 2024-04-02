@@ -2,36 +2,34 @@
     ViewBag.Title = "Rubric Index";
 }
 
-@*@model
-*@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Rubric Index</title>
-</head>
-<body>
-    <h1>Rubric Index</h1>
+@model List<Rubric_Item>
 
-    <div class="card-container">
-        @foreach (var course in Model.Rubric_Items)
-        {
-            <div class="card" onclick="navigateToRequirements('@course.Code')">
-                <h2>@course.Name</h2>
-                <div class="subtitle">20% of overall</div>
-                <div class="subtitle">@course.rubric_item_id.Count() requirements</div>
-            </div>
-        }
-    </div>
+<h1>Rubric Index</h1>
 
-    <script>
-        //GOING TO HAVE TO EDIT THIS PART TO MAKE THE "REQUIREMENTS" DYNAMIC
+<div class="card-container">
+    @{
+        var groupedItems = Model.GroupBy(item => item.class_number);
+    }
+    
+    
+    @foreach (var category in groupedItems)
+    {
+        var categoryName = category.Key;
+        var requirementCount = category.Count();
 
-        // Function to navigate to the requirements view
-        function navigateToRequirements(courseCode) {
-            // Replace the URL with the appropriate route for the requirements view
+        <h1>
+            @if (categoryName == 000)
+            {
+                @:Presentation
+            } else
+            {
+                @:IS @categoryName
+            }
+        </h1>
 
-            window.location.href = '/Requirements/' + courseCode;
-        }
-    </script>
-</body>
-</html>
+        <div class="card" asp-route-id="@categoryName">
+            <div class="subtitle">20% of overall</div>
+            <div class="subtitle">@requirementCount</div>
+        </div>
+    }
+</div>
