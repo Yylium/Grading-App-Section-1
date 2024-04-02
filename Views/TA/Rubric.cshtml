@@ -1,6 +1,9 @@
 ﻿@{
     Layout = "_TALayout";
+    var totalPoints = 0;
 }
+@model List<Rubric_Item>
+
 
 <div>
     <button style="border:none; background:none"> < <span style="font-size:larger">Return to Dashboard</span></button>
@@ -15,7 +18,29 @@
         <td class="col-4"><h3>Notes</h3></td>
        </thead>
        <tbody>
-            <tr>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="hidden" value="@x.rubric_item_id" />
+                        <h6>@x.rubric_item_text</h6>
+                        <p>@x.rubric_item_details</p>
+                    </td>
+                    <td style="text-align:center">
+                        <strong>@x.max_points</strong>
+                    </td>
+                    <td>
+                        <input class="score-input align-center" type="number" max="@x.max_points" min="0" style="color:#3DA9FC; font-weight:bolder;" />
+                    </td>
+                    <td>
+                        <textarea placeholder="Notes" style="width:100%"></textarea>
+                    </td>
+                </tr>
+                {
+                    totalPoints += x.max_points;
+                }
+            }
+@*             <tr>
                 <td>
                     <h6>Use HTTPS/TLS</h6>
                     <p>Does their solution utilize HTTPS and or TLS</p>
@@ -59,13 +84,13 @@
                 <td>
                     <textarea placeholder="Notes" style="width:100%"></textarea>
                 </td>
-            </tr>
+            </tr> *@
        </tbody>
     
 </table>
 
     <div id="calculationResult" style="margin-bottom: 20px;">
-        Points Earned: <span id="pointsEarned">0</span> / <span id="pointsPossible">4</span>
+        Points Earned: <span id="pointsEarned">0</span> / <span id="pointsPossible">@totalPoints</span>
     </div>
     <input type="submit" />
 </form>

@@ -11,7 +11,7 @@ namespace Grading_App_Section_1.Models
         [Required]
         [ForeignKey("class_number")]
         public int class_number { get; set; }
-        public Admins_Teacher Admins_Teacher { get; set; }
+        //public Admins_Teacher Admins_Teacher { get; set; }
 
         [Required]
         public string rubric_item_text { get; set; }
