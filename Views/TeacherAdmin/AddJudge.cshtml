@@ -1,6 +1,4 @@
-﻿
-@model Judge
-
+﻿@model Grading_App_Section_1.Models.ViewModels.AddJudgeViewModel
 
 <div class="container">
     <div class="row">
@@ -9,23 +7,24 @@
 
             <form method="post">
                 <input type='hidden' asp-for="judge_id">
-                <input type='hidden' asp-for="judge_team">
+                @* <input type='hidden' asp-for="judge_team"> *@
+
                 <label asp-for="first_name">First Name:</label>
                 <input asp-for="first_name" class="form-control" />
                 <br />
                 <label asp-for="last_name">Last Name:</label>
                 <input asp-for="last_name" class="form-control" />
                 <br />
-                @*     <label asp-for="judge_pass">Password:</label>
-                <input asp-for="judge_pass" class="form-control" /> *@
+                <label asp-for="password_hash">Password:</label>
+                <input asp-for="password_hash" type="password" class="form-control" placeholder="firstLast" />
                 <br />
-                @*     <label>Current Room Assignment: </label>
-                <select asp-for="room" class="form-control">
-                <option value="">Select a Room</option>
-                @foreach (Category c in ViewBag.Categories)
-                {
-                <option value="@c.CategoryID">@c.CategoryName</option>
-                }
+                <label>Current Room Assignment:</label>
+@*                 <select asp-for="schedule_room" class="form-control">
+                    <option value="">Select a Room</option>
+                    @foreach (var room in Model.Rooms)
+                    {
+                        <option value="@room.RoomId">@room.RoomName</option>
+                    }
                 </select> *@
                 <br />
                 <button type="submit" class="btn btn-primary">Add</button>
