@@ -13,7 +13,7 @@ namespace Grading_App_Section_1.Models
         List<Student> Students { get; }
         List<Student_Group> Student_Groups { get; }
         List<Survey_Response> Survey_Responses { get; }
-        List<TA> TAs { get; }
+        IQueryable<TA> TAs { get; }
         List<Login_Table> Login_Tables { get; }
 
         //READ the README in the "EFGradingAppRepository.cs" file before editing these methods.

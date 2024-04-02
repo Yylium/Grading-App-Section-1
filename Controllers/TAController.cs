@@ -19,10 +19,10 @@ namespace Grading_App_Section_1.Controllers
         }
         public IActionResult Rubric()
         {
-            //var taNetid = "hge54";
+            var taNetid = "hge54";
 
-            //var classNumbers = _repo.TAs.Where(ta => ta.ta_netid == taNetid)
-            //                .Select(ta => ta.class_number).FirstOrDefault();
+            var classNumbers = _repo.TAs.Where(ta => ta.ta_net_id == taNetid)
+                            .Select(ta => ta.class_number).FirstOrDefault();
 
             //var rubricItems = _repo.Rubric_Items
             //    .Where(x => x.class_number == classNumbers).ToList();
@@ -30,7 +30,7 @@ namespace Grading_App_Section_1.Controllers
             //int classNumbers = _repo.TAs.Single(x => x.ta_netid == taNetid).class_number;
 
             List<Rubric_Item> rubric_Items = new List<Rubric_Item>();
-            int classNumbers = 414;
+            //int classNumbers = 414;
 
             for (int i = 0; i < _repo.Rubric_Items.Count(); i++)
             {

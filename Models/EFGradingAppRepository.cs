@@ -20,7 +20,7 @@ namespace Grading_App_Section_1.Models
         public List<Student> Students => _context.Students.ToList();
         public List<Student_Group> Student_Groups => _context.Student_Groups.ToList();
         public List<Survey_Response> Survey_Responses => _context.Survey_Responses.ToList();
-        public List<TA> TAs => _context.TAs.ToList();
+        public IQueryable<TA> TAs => _context.TAs;
         public List<Login_Table> Login_Tables => _context.Login_Tables.ToList();
 
         //README BEFORE EDITING
