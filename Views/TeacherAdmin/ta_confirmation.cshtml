@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "_TeachAdminLayout";
+}
+
+@model TA
+
+<h2>TA Received. Thank you for adding @Model.first_name @Model.last_name</h2>
+
+<form method="post">
+    <a class="btn btn-secondary" asp-controller="TeacherAdmin" asp-action="ta_Index">See All TA's</a>
+</form>

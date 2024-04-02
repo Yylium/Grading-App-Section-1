@@ -56,9 +56,11 @@ namespace Grading_App_Section_1.Models
 
         //Team7 Methods
 
-        public void Team7Method1();
-        public void Team7Method2();
-        public void Team7Method3();
+        public void Team7Method1(Rubric_Item newItem);
+        public void Team7Method2(Rubric_Item updatedItem);
+        public void Team7Method2_2(TA updatedTa);
+        public void Team7Method3(Rubric_Item rubricItem);
+        public void Team7Method3_2(TA ta_nedid);
         public void Team7Method4();
 
         //Team8 Methods

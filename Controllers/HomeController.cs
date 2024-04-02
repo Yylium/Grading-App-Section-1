@@ -1,5 +1,6 @@
 using Grading_App_Section_1.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Grading_App_Section_1.Controllers
