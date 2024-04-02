@@ -30,7 +30,7 @@
             <td>1-2, 1-4, 1-9, 3-4</td>
             <td>1-9</td>
         </tr>
-        <tr>
+        <tr>s
             <td class="bold">174 TNRB</td>
             <td class="bold">Max Verstappen, Lando Norris</td>
             <td>1-2, 1-4, 1-9, 3-4</td>
@@ -39,7 +39,7 @@
 
         @foreach (var s in Model) {
             <tr data-href="/TeacherAdmin/JudgeView" class="hover-element">
-                <td class="bold">174 TNRB</td>
+                <td class="bold">@s.schedule_room</td>
                 <td class="bold">Max Verstappen, Lando Norris</td>
                 <td>1-2, 1-4, 1-9, 3-4</td>
                 <td>1-9</td>
