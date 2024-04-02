@@ -35,7 +35,7 @@ namespace Grading_App_Section_1.Controllers
         [HttpPost] 
         public IActionResult add_ta()
         {
-            return View(ta_index);
+            return View("ta_index");
         }
 
         [HttpGet]
