@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Grading_App_Section_1.Models
 {
@@ -13,8 +14,7 @@ namespace Grading_App_Section_1.Models
         [Required]
         public string last_name { get; set;}
 
-        public string? class_number { get; set; }
-
-
+        //[ForeignKey("Rubric_Item")]
+        public int? class_number { get; set; }
     }
 }
