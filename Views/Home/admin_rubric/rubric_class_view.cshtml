@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@*@model Rubric_Items
+*@
+@*Add back button*@
+
+@*Add up all of the points within a class*@
+@{
+    // Assuming Model.Classes is the collection of class objects
+    int totalPossiblePoints = Model.Rubric_Items.Sum(c => c.max_points);
+}
+
+<h1>@Model.class_number</h1>
+<h4>(@totalPossiblePoints possible points)</h4>
+
+<h2>Objectives</h2>
+
+<table>
+    <thead>
+        <tr>
+            <td>Points Possible</td>
+            <td>Objectives</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.max_points</td>
+            <td>@x.rubric_item_text <br /> @x.rubric_item_description</td>
+
+            <td><a class="btn btn-info" asp-controller="TeacherAdmin" asp-action="Edit_rubric" asp-route-id="@x.class_number">Edit</a></td>
+            <td><a class="btn btn-danger" asp-controller="TeacherAdmin" asp-action="Delete_rubric" asp-route-id="@x.class_number">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<button type="sumbit">Add Objective</button>

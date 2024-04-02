@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "ListofStudentSubmissions";
+}
+
+@{
+    Layout = "_TeachAdminLayout";
+}
+
+@model 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Student Submissions</title>
+    <style>
+        .custom-table {
+            background-color: #D9E4EC; /* Background color */
+        }
+    </style>
+
+</head>
+<body>
+    <h1>List of Student Submissions</h1>
+<div class="container">
+    <div class="header">
+        <h2>List of Student Submissions </h2>
+    </div>
+        <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Group Id</th>
+                <th>Section Number</th>
+                <th>Group Number</th>
+                <th>Submission Link</th>
+                <th>Group Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.group_id</td>
+                    <td>@student.section_number</td>
+                    <td>@student.group_number</td>
+                    <td>@student.submission_link</td>
+                    <td>@student.group_modifier</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+

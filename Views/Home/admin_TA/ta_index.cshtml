@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@*@model -----*@
+
+<h1>TA's</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>TA Name</td>
+            <td>Assigned Class</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.first_name @x.last_name</td>
+            <td>@x.class_assignment</td>
+
+            <td><a class="btn btn-info" asp-controller="TeacherAdmin" asp-action="Edit_ta" asp-route-id="@x.ta_netid">Edit</a></td>
+            <td><a class="btn btn-danger" asp-controller="TeacherAdmin" asp-action="Delete_ta" asp-route-id="@x.ta_netid">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<button type="sumbit" asp-controller="TeacherAdmin" asp-action="Add_ta">Add TA</button>
+
