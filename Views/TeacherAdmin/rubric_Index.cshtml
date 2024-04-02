@@ -1,35 +1,38 @@
 ﻿@{
     ViewBag.Title = "Rubric Index";
+    Layout = "_TeachAdminLayout";
 }
 
 @model List<Rubric_Item>
 
 <h1>Rubric Index</h1>
 
+@{
+    // Get distinct class numbers
+    var distinctClassNumbers = Model.Select(item => item.class_number).Distinct();
+
+    // Get count of each class number
+    var classNumberCounts = Model.GroupBy(item => item.class_number)
+        .ToDictionary(group => group.Key, group => group.Count());
+}
+    
 <div class="card-container">
-    @{
-        var groupedItems = Model.GroupBy(item => item.class_number);
-    }
-    
-    
-    @foreach (var category in groupedItems)
+    @foreach (var classNum in distinctClassNumbers)
     {
-        var categoryName = category.Key;
-        var requirementCount = category.Count();
-        <a asp-controller="TeacherAdmin" asp-action="View_Rubric_Category" asp-route-category="@categoryName">
+        <a asp-controller="TeacherAdmin" asp-action="View_Rubric_Category" asp-route-category="@classNum">
             <div class="card">
                 <h1>
-                    @if (categoryName == 000)
+                    @if (classNum > 000)
                     {
-                        @:Presentation
+                        <text>Presentation</text>
                     }
                     else
                     {
-                        @:IS @categoryName
+                        <text>IS @classNum</text>
                     }
                 </h1>
                 <div class="subtitle">20% of overall</div>
-                <div class="subtitle">@requirementCount</div>
+                <div class="subtitle">@classNumberCounts[classNum]</div>
             </div>
         </a>
     }

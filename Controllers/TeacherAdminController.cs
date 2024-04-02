@@ -82,16 +82,17 @@ namespace Grading_App_Section_1.Controllers
 
         public IActionResult View_Rubric()
         {
-            return View("rubric_Index");
+            var rubric = _repo.Rubric_Items;
+            return View("rubric_Index", rubric);
         }
 
         // Methods to update a rubric item
         public IActionResult Edit_Rubric_Item(int id)
         {
-            var rubricItem = _repo.Rubric_Items
+            var item = _repo.Rubric_Items
                 .Single(x => x.rubric_item_id == id);
 
-            return View("rubric_edit_scores", rubricItem);
+            return View("rubric_edit_scores", item);
         }
         [HttpPost]
         public IActionResult Edit_Rubric_Item(Rubric_Item rubricItem)
