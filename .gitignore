@@ -402,3 +402,4 @@ FodyWeavers.xsd
 *.db-shm
 *.db-wal
 *Migrations/
+*.db
