@@ -1,0 +1,72 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<link href="~/css/teacheradmin.css" rel="stylesheet" />
+
+@model Grading_App_Section_1.Models.JudgeScheduleViewModel
+
+
+<div style="width: 40%; background-color: lightblue; padding: 20px; margin-left: auto; margin-right: auto;">
+    <div>
+        <h1>Judging</h1>
+        <table>
+            <tr>
+                <th>Room Number</th>
+                <th>Judges Count</th> <!-- Adjust the header if needed -->
+            </tr>
+            @foreach (var room in Model.RoomAssignments)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(room.RoomNumber, "RoomDetail", "TeacherAdmin", new { roomNumber = room.RoomNumber }, null)
+                    </td>
+                    <td>
+                        @room.JudgesCount
+                    </td>
+                </tr>
+            }
+        </table>
+        <a class="btn btn-primary" asp-controller="TeacherAdmin" asp-action="AddRoom">Add Room</a>
+
+
+
+
+
+
+
+        <table>
+            <tr>
+                <th>Judge Name</th>
+                <th>Assigned Room</th>
+            </tr>
+            @foreach (var judge in Model.Judges)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(judge.first_name + " " + judge.last_name, "JudgeDetail", "TeacherAdmin", new { id = judge.judge_id }, null)
+                    </td>
+                    <td>
+                        @* Logic to display assigned room for the judge *@
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <a class="btn btn-primary" asp-controller="TeacherAdmin" asp-action="AddJudge">Add Room</a>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+ 
+    
+
