@@ -1,5 +1,6 @@
 ﻿using Grading_App_Section_1.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Grading_App_Section_1.Controllers
 {
@@ -28,9 +29,12 @@ namespace Grading_App_Section_1.Controllers
             return View(model);
         }
 
-        public IActionResult JudgeView()
+        public IActionResult JudgeView(int judge_team_id)
         {
-            var data = _repo.Schedules.ToList();
+            var data = _repo.Schedules.Include(s => s.Judge_Team)
+                         .Include(s => s.Student_Group)
+                         .Where(s => s.judge_team_id == judge_team_id)
+                         .ToList();
             var judges = _repo.Judges.ToList();
             var surveyResponses = _repo.Survey_Responses.ToList();
 

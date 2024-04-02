@@ -39,7 +39,7 @@
 
         @foreach (var s in Model.Item1)
         {
-            <tr data-href="/TeacherAdmin/JudgeView" class="hover-element">
+            <tr data-href="/TeacherAdmin/JudgeView?judgeTeamId=@s.judge_team_id" class="hover-element">
                 <td class="bold">@s.schedule_room</td>
                 <td class="bold">
                     @foreach (var j in Model.Item2)

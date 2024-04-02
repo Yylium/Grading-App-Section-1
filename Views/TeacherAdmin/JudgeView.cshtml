@@ -4,6 +4,44 @@
 @model Tuple<List<Schedule>, List<Judge>, List<Survey_Response>>
 <br>
 <div class="text-left">
+    <h2 class="text-nextex-paragraph bold">
+        Room
+        @Model.Item1.FirstOrDefault()?.schedule_room
+    </h2>
+    <h5 class="text-nextex-paragraph norm-wt">
+        Judges:
+        @foreach (var judge in Model.Item2)
+        {
+            @judge.first_name @judge.last_name
+        }
+    </h5>
+</div>
+<br>
+<table class="rounded-table bold">
+    <thead>
+        <tr>
+            <th>Group</th>
+            <th>Question 1</th>
+            <th>Question 2</th>
+            <th>Question 3</th>
+            <th>Feedback</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var response in Model.Item3)
+        {
+            <tr>
+                <td>@response.Student_Group.group_number</td>
+                <td>@response.survey_num_response</td>
+                <td>@response.survey_num_response</td>
+                <td>@response.survey_num_response</td>
+                <td>@response.survey_text_response</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<div class="text-left">
     <h2 class="text-nextex-paragraph bold">Room 174 TNRB</h2>
     <h5 class="text-nextex-paragraph norm-wt">Judges: Max Verstappen, Lando Norris</h5>
 </div>
