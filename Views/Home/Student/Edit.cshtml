@@ -1,21 +1,16 @@
 @{
     ViewData["Title"] = "Submission";
 }
-@* Reed made this view. *@
+@Grading_App_Section_1.Models.Student
 
-<form method="post" action="YourController/YourAction" class="container mt-5">
+<form method="post" action="Student/Edit" class="container mt-5">
     <div class="text-center">
-        <h1 class="display-4">Hello "Model.StudentName"</h1>
+        <h1 class="display-4">Edit Your GitHub Link "Model.StudentName"</h1>
         <br />
         <br />
         <div class="input-group mb-3">
+            <input type="hidden" asp-for="group_id" />
             <input type="text" name="githubLink" class="form-control" placeholder="Edit your group’s GitHub link here" aria-label="Group's GitHub Link" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                @*                 <i class="bi bi-trash"></i>
-                *@                <button class="btn btn-danger" type="delete">Delete icon</button>
-                @*                 <i class="bi bi-pencil"></i><
-                *@                <button class="btn btn-info" type="button">Submit changes icon</button>
-            </div>
         </div>
         <br />
         <button type="submit" class="btn btn-primary">Submit Link</button>

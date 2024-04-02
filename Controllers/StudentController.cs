@@ -1,5 +1,6 @@
 ﻿using Grading_App_Section_1.Models;
 using Microsoft.AspNetCore.Mvc;
+using SQLitePCL;
 
 namespace Grading_App_Section_1.Controllers
 {
@@ -32,8 +33,10 @@ namespace Grading_App_Section_1.Controllers
         
         // Build Controllers for Edit and Delete
         [HttpGet]
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
+            var recordToEdit = _repo.Student_Groups
+                .Single(x => x.group_id == id);
             
             return View("~/Views/Home/Student/Edit.cshtml");
         }
@@ -41,9 +44,13 @@ namespace Grading_App_Section_1.Controllers
         [HttpPost]
         public IActionResult Edit(Student_Group groupInfo)
         {
+            if (ModelState.IsValid)
+            {
+                //_repo.Student_Groups.Update(groupInfo);
+                return View();
+            }
             
-            
-            return View("~/Views/Home/Student/Edit.cshtml");
+            return RedirectToAction("LinkSubmission");
         }
     }
 }
