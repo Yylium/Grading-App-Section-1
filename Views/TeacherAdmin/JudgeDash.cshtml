@@ -16,18 +16,28 @@
         <table>
             <tr>
                 <th>Room Number</th>
-                <th>Judges Assignmed</th>
+                <th>Judges Count</th> <!-- Adjust the header if needed -->
             </tr>
             @foreach (var room in Model.RoomAssignments)
             {
                 <tr>
-                    <td>@room.RoomNumber</td>
-                    <td>@room.JudgesCount</td>
+                    <td>
+                        @Html.ActionLink(room.RoomNumber, "RoomDetail", "TeacherAdmin", new { roomNumber = room.RoomNumber }, null)
+                    </td>
+                    <td>
+                        @room.JudgesCount
+                    </td>
                 </tr>
             }
         </table>
         <a class="btn btn-primary" asp-controller="TeacherAdmin" asp-action="AddRoom">Add Room</a>
-        <h1>Rooms</h1>
+
+
+
+
+
+
+
         <table>
             <tr>
                 <th>Judge Name</th>
@@ -36,12 +46,16 @@
             @foreach (var judge in Model.Judges)
             {
                 <tr>
-                    <td>@judge.first_name @judge.last_name</td>
-                    <!-- other columns as needed -->
+                    <td>
+                        @Html.ActionLink(judge.first_name + " " + judge.last_name, "JudgeDetail", "TeacherAdmin", new { id = judge.judge_id }, null)
+                    </td>
+                    <td>
+                        @* Logic to display assigned room for the judge *@
+                    </td>
                 </tr>
             }
-            
         </table>
+
         <a class="btn btn-primary" asp-controller="TeacherAdmin" asp-action="AddJudge">Add Room</a>
 
     </div>

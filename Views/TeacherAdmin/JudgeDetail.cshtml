@@ -1,0 +1,36 @@
+﻿@model Grading_App_Section_1.Models.Judge
+@{
+    ViewBag.Title = "Judge Details";
+}
+
+<h2>Judge Details</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>@Model.first_name @Model.last_name</h3>
+        <table class="table">
+            <tr>
+                <th>First Name</th>
+                <td>@Model.first_name</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>@Model.last_name</td>
+            </tr>
+            <tr>
+                <th>Judge ID</th>
+                <td>@Model.judge_id</td>
+            </tr>
+            <tr>
+                <th>Team ID</th>
+                <td>@Model.judge_team_id</td>
+            </tr>
+            <!-- Add more fields as necessary -->
+        </table>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Edit", "EditJudge", new { id = Model.judge_id }) |
+    @Html.ActionLink("Back to List", "JudgeDash")
+</div>

@@ -56,6 +56,24 @@ namespace Grading_App_Section_1.Controllers
             return View("~/Views/TeacherAdmin/JudgeDash.cshtml", viewModel);
         }
 
+        public IActionResult JudgeDetail(int id)
+        {
+            var judge = _repo.Judges.FirstOrDefault(j => j.judge_id == id);
+            if (judge == null)
+            {
+                return NotFound();
+            }
+            return View(judge);
+        }
+
+        public IActionResult RoomDetail(string roomNumber)
+        {
+            var schedulesInRoom = _repo.Schedules.Where(s => s.schedule_room == roomNumber).ToList();
+            // You might also want to fetch other details related to the room
+            return View(schedulesInRoom);
+        }
+
+
         public IActionResult AddSurveyItem()
         {
             return View("~/Views/TeacherAdmin/AddSurveyItem.cshtml");
