@@ -8,11 +8,11 @@ namespace Grading_App_Section_1.Models
         [Key]
         public int survey_response_id { get; set; }
 
-        [ForeignKey("group_id")]
+        [ForeignKey("Student_Group")]
         public required int group_id { get; set; }
         public required Student_Group Student_Group { get; set; }
 
-        [ForeignKey("judge_id")]
+        [ForeignKey("Judge")]
         public required int judge_id { get; set; }
         public required Judge Judge { get; set; }
         

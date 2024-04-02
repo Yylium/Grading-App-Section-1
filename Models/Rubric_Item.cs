@@ -9,7 +9,7 @@ namespace Grading_App_Section_1.Models
         public int rubric_item_id { get; set; }
 
         [Required]
-        [ForeignKey("class_number")]
+        [ForeignKey("Admins_Teacher")]
         public int class_number { get; set; }
         public Admins_Teacher Admins_Teacher { get; set; }
 
