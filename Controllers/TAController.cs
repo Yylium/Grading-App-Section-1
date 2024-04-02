@@ -11,9 +11,5 @@ namespace Grading_App_Section_1.Controllers
         {
             _repo = temp;
         }
-        public IActionResult Index()
-        {
-            return null;
-        }
     }
 }

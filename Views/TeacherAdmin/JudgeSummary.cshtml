@@ -2,7 +2,7 @@
     ViewData["Title"] = "Judge Summary";
 }
 <br>
-@model Schedule
+@model List<Schedule>
 
 <div class="text-left">
     <h2 class="text-nextex-paragraph bold">Judge Summary</h2>
@@ -36,4 +36,13 @@
             <td>1-2, 1-4, 1-9, 3-4</td>
             <td>1-9</td>
         </tr>
+
+        @foreach (var s in Model) {
+            <tr data-href="/TeacherAdmin/JudgeView" class="hover-element">
+                <td class="bold">174 TNRB</td>
+                <td class="bold">Max Verstappen, Lando Norris</td>
+                <td>1-2, 1-4, 1-9, 3-4</td>
+                <td>1-9</td>
+            </tr>
+        }
 </table>

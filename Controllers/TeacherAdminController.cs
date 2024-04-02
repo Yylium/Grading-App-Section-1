@@ -18,7 +18,7 @@ namespace Grading_App_Section_1.Controllers
 
         public IActionResult JudgeSummary()
         {
-            var data = _repo.Schedules;
+            var data = _repo.Schedules.ToList();
 
             return View(data);
         }
