@@ -36,8 +36,26 @@ namespace Grading_App_Section_1.Controllers
         }
         public IActionResult JudgeDash()
         {
-            return View("~/Views/TeacherAdmin/JudgeDash.cshtml");
+            var schedules = _repo.Schedules.ToList();
+            var roomAssignments = schedules
+                .GroupBy(s => s.schedule_room)
+                .Select(group => new RoomAssignment
+                {
+                    RoomNumber = group.Key,
+                    JudgesCount = group.Select(s => s.judge_team_id).Distinct().Count()
+                })
+                .ToList();
+
+            var viewModel = new JudgeScheduleViewModel
+            {
+                Judges = _repo.Judges.ToList(),
+                Schedules = schedules,
+                RoomAssignments = roomAssignments
+            };
+
+            return View("~/Views/TeacherAdmin/JudgeDash.cshtml", viewModel);
         }
+
         public IActionResult AddSurveyItem()
         {
             return View("~/Views/TeacherAdmin/AddSurveyItem.cshtml");
