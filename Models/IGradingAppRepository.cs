@@ -9,7 +9,7 @@ namespace Grading_App_Section_1.Models
         List<Judge_Team> Judge_Teams { get; }
         List<Rubric_Item> Rubric_Items { get; }
         List<Rubric_Item_Grade> Rubric_Item_Grades { get; }
-        List<Schedule> Schedules { get; }
+        IQueryable<Schedule> Schedules { get; }
         List<Student> Students { get; }
         List<Student_Group> Student_Groups { get; }
         List<Survey_Response> Survey_Responses { get; }

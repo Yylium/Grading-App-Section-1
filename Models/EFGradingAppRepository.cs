@@ -16,7 +16,7 @@ namespace Grading_App_Section_1.Models
         public List<Judge_Team> Judge_Teams => _context.Judge_Teams.ToList();
         public List<Rubric_Item> Rubric_Items => _context.Rubric_Items.ToList();
         public List<Rubric_Item_Grade> Rubric_Item_Grades => _context.Rubric_Item_Grades.ToList();
-        public List<Schedule> Schedules => _context.Schedules.ToList();
+        public IQueryable<Schedule> Schedules => _context.Schedules;
         public List<Student> Students => _context.Students.ToList();
         public List<Student_Group> Student_Groups => _context.Student_Groups.ToList();
         public List<Survey_Response> Survey_Responses => _context.Survey_Responses.ToList();

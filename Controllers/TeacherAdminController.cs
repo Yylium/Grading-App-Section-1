@@ -27,6 +27,5 @@ namespace Grading_App_Section_1.Controllers
         {
             return View();
         }
-
     }
 }
