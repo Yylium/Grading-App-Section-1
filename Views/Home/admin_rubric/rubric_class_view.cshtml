@@ -10,8 +10,7 @@
 
 @*Add up all of the points within a class*@
 @{
-    // Assuming Model.Classes is the collection of class objects
-    int totalPossiblePoints = @Model.Count;
+    var totalPossiblePoints = @Model.Count();
 }
 
 <h1>@Model[0].class_number</h1>
@@ -27,16 +26,16 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var x in Model)
+        @foreach (var rubricItem in Model)
         {
         <tr>
-            <td>@x.max_points</td>
-            <td>@x.rubric_item_text <br /> @x.rubric_item_details</td>
+            <td>@rubricItem.max_points</td>
+            <td>@rubricItem.rubric_item_text <br /> @rubricItem.rubric_item_details</td>
 
-            <td><a class="btn btn-info" asp-controller="TeacherAdmin" asp-action="Edit_rubric" asp-route-id="@x.class_number">Edit</a></td>
-            <td><a class="btn btn-danger" asp-controller="TeacherAdmin" asp-action="Delete_rubric" asp-route-id="@x.class_number">Delete</a></td>
+            <td><a class="btn btn-info" asp-controller="TeacherAdmin" asp-action="Edit_Rubric_Item" asp-route-id="@rubricItem.rubric_item_id">Edit</a></td>
+            <td><a class="btn btn-danger" asp-controller="TeacherAdmin" asp-action="Delete_Rubric_Item" asp-route-id="@rubricItem">Delete</a></td>
         </tr>
         }
     </tbody>
 </table>
-<button type="submit">Add Objective</button>
+<a class="btn btn-primary" asp-controller="TeacherAdmin" asp-action="Add_Rubric_Item">Add Objective</a>

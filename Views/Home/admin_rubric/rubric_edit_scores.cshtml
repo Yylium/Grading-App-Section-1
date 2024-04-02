@@ -4,24 +4,24 @@
 @{
 }
 
-@model
+@model Rubric_Item_Grade
 
 <h1>Add Objective</h1>
 
 <form method="post">
-    <select asp-for="max_points">
+    <select asp-for="Rubric_Item.max_points">
         <option value="">Possible Point(s)</option>
-        @for (int i = 1; i <= 10; i++)
+        @for (int i = 1; i <= Model.Rubric_Item.max_points; i++)
         {
         <option value="@i">@i</option>
         }
     </select>
     <br /><br />
-    <label asp-for="rubric_items_text">Objective Name</label>
-    <input asp-for="rubric_items_text" />
+    <label asp-for="Rubric_Item.rubric_item_text">Objective Name</label>
+    <input asp-for="Rubric_Item.rubric_item_text" />
     <br /><br />
-    <label asp-for="rubric_items_description">Description</label>
-    <input asp-for="rubric_items_description" />
+    <label asp-for="Rubric_Item.rubric_item_details">Description</label>
+    <input asp-for="Rubric_Item.rubric_item_details" />
     <br /><br />
     <button type="submit">Save</button>
 </form>

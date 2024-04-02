@@ -121,14 +121,30 @@ namespace Grading_App_Section_1.Models
         }
 
         //Team 7 Methods
-        public void Team7Method1()
+        public void Team7Method1(Rubric_Item newItem)
         {
+            _context.Add(newItem);
+            _context.SaveChanges();
         }
-        public void Team7Method2()
+        public void Team7Method2(Rubric_Item updatedItem)
         {
+            _context.Update(updatedItem);
+            _context.SaveChanges();
         }
-        public void Team7Method3()
+        public void Team7Method2_2(TA updatedTa)
         {
+            _context.Update(updatedTa);
+            _context.SaveChanges();
+        }
+        public void Team7Method3(Rubric_Item rubricItem)
+        {
+            _context.Rubric_Items.Remove(rubricItem);
+            _context.SaveChanges();
+        }
+        public void Team7Method3_2(TA ta_netid)
+        {
+            _context.TAs.Remove(ta_netid);
+            _context.SaveChanges();
         }
         public void Team7Method4()
         {

@@ -16,20 +16,21 @@
     {
         var categoryName = category.Key;
         var requirementCount = category.Count();
-
-        <h1>
-            @if (categoryName == 000)
-            {
-                @:Presentation
-            } else
-            {
-                @:IS @categoryName
-            }
-        </h1>
-
-        <div class="card" asp-route-id="@categoryName">
-            <div class="subtitle">20% of overall</div>
-            <div class="subtitle">@requirementCount</div>
-        </div>
+        <a asp-controller="TeacherAdmin" asp-action="View_Rubric_Category" asp-route-category="@categoryName">
+            <div class="card">
+                <h1>
+                    @if (categoryName == 000)
+                    {
+                        @:Presentation
+                    }
+                    else
+                    {
+                        @:IS @categoryName
+                    }
+                </h1>
+                <div class="subtitle">20% of overall</div>
+                <div class="subtitle">@requirementCount</div>
+            </div>
+        </a>
     }
 </div>
