@@ -4,7 +4,7 @@
 @{
 }
 
-@*@model -----*@
+@model List<TA>
 
 <h1>TA's</h1>
 
@@ -20,7 +20,7 @@
         {
         <tr>
             <td>@x.first_name @x.last_name</td>
-            <td>@x.class_assignment</td>
+            <td>@x.class_number</td>
 
             <td><a class="btn btn-info" asp-controller="TeacherAdmin" asp-action="Edit_ta" asp-route-id="@x.ta_netid">Edit</a></td>
             <td><a class="btn btn-danger" asp-controller="TeacherAdmin" asp-action="Delete_ta" asp-route-id="@x.ta_netid">Delete</a></td>
