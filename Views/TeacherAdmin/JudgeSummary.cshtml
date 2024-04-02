@@ -2,7 +2,7 @@
     ViewData["Title"] = "Judge Summary";
 }
 <br>
-@model Tuple<List<Schedule>, List<Judge>>
+@model Tuple<List<Schedule>, List<Judge>, List<Student_Group>>
 
 <div class="text-left">
     <h2 class="text-nextex-paragraph bold">Judge Summary</h2>
@@ -47,7 +47,12 @@
                         @j.first_name<text> </text>@j.last_name@if (!j.Equals(Model.Item2.Last())) { <text>, </text> }
                     }
                 </td>
-                <td>1-2, 1-4, 1-9, 3-4</td>
+                <td>
+                    @foreach (var group in Model.Item3)
+                    {
+                        @group.group_id @Html.Raw(", ")
+                    }
+                </td>
                 <td>1-9</td>
             </tr>
         }
