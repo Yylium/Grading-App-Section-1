@@ -1,4 +1,4 @@
-﻿namespace Grading_App_Section_1.Models
+﻿namespace Grading_App_Section_1.Models.ViewModels
 {
     public class RoomAssignment
     {
