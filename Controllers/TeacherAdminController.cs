@@ -30,7 +30,14 @@ namespace Grading_App_Section_1.Controllers
 
         public IActionResult JudgeView()
         {
-            return View();
+            var data = _repo.Schedules.ToList();
+            var judges = _repo.Judges.ToList();
+            var surveyResponses = _repo.Survey_Responses.ToList();
+
+            var model = new Tuple<List<Schedule>, List<Judge>, List<Survey_Response>>(data, judges, surveyResponses);
+
+            return View(model);
+
         }
     }
 }
