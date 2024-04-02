@@ -17,38 +17,34 @@
             <th>Top Group</th>
         </tr>
     </thead>
-    <tbody>
-        <tr data-href="/TeacherAdmin/JudgeView" class="hover-element">
-            <td class="bold">174 TNRB</td>
-            <td class="bold">Max Verstappen, Lando Norris</td>
-            <td>1-2, 1-4, 1-9, 3-4</td>
-            <td>1-9</td>
-        </tr>
-        <tr>
-            <td class="bold">174 TNRB</td>
-            <td class="bold">Max Verstappen, Lando Norris</td>
-            <td>1-2, 1-4, 1-9, 3-4</td>
-            <td>1-9</td>
-        </tr>
-        <tr>
-            <td class="bold">174 TNRB</td>
-            <td class="bold">Max Verstappen, Lando Norris</td>
-            <td>1-2, 1-4, 1-9, 3-4</td>
-            <td>1-9</td>
-        </tr>
 
-        @foreach (var s in Model.Item1)
-        {
-            <tr data-href="/TeacherAdmin/JudgeView?judgeTeamId=@s.judge_team_id" class="hover-element">
-                <td class="bold">@s.schedule_room</td>
-                <td class="bold">
-                    @foreach (var j in Model.Item2)
+
+    @foreach (var s in Model.Item1)
+    {
+        <tr data-href="/TeacherAdmin/JudgeView" class="hover-element">
+            <td class="bold">@s.schedule_room</td>
+            <td class="bold">
+                @foreach (var j in Model.Item2)
+                {
+                    @j.first_name
+
+                    <text> </text>
+
+                    @j.last_name
+                    @if (!j.Equals(Model.Item2.Last()))
                     {
-                        @j.first_name<text> </text>@j.last_name@if (!j.Equals(Model.Item2.Last())) { <text>, </text> }
+                        <text>, </text>
                     }
-                </td>
-                <td>1-2, 1-4, 1-9, 3-4</td>
-                <td>1-9</td>
-            </tr>
-        }
+                }
+            </td>
+            <td>
+                @foreach (var group in Model.Item1.Where(g => g.schedule_id == s.schedule_id))
+                {
+                    @group.group_id @Html.Raw(", ")
+                }
+            </td>
+            <td>1-9</td>
+        </tr>
+    }
+
 </table>

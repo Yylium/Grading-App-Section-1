@@ -14,17 +14,17 @@ namespace Grading_App_Section_1.Controllers
         }
         public IActionResult Dashboard()
         {
-            return View();
+            int SurveyResponses = _repo.Survey_Responses.Count();
+            return View(SurveyResponses);
         }
 
         public IActionResult JudgeSummary()
         {
             var data = _repo.Schedules.ToList();
             var judges = _repo.Judges.ToList();
+            // var studentGroups = _repo.Student_Groups.ToList();
 
             var model = new Tuple<List<Schedule>, List<Judge>>(data, judges);
-
-
 
             return View(model);
         }
