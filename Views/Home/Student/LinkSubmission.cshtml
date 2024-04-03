@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Submission";
+}
+@model Grading_App_Section_1.Models.Student
+
+<form method="post" action="Student/LinkSubmission/" class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4">Hello @Model.first_name</h1>
+        <br />
+        <br />
+        <div class="input-group mb-3">
+            <input type="text" name="submissionLink" class="form-control" placeholder="Paste your group’s GitHub link here" aria-label="Group's GitHub Link" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                @*                 <i class="bi bi-trash"></i>
+                *@                <button class="btn btn-danger" type="delete">Delete icon</button>
+                @*                 <i class="bi bi-pencil"></i><
+                *@                <button class="btn btn-secondary" type="button" asp-controller="Student" asp-action="Edit" asp-route-id="@Model.group_id">Edit icon</button>
+            </div>
+        </div>
+        <br />
+        <input type="hidden" name="groupId" value="@Model.group_id">
+        <button type="submit" class="btn btn-primary" >Submit Link</button>
+    </div>
+</form>

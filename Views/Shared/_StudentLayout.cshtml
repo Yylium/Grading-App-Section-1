@@ -24,7 +24,7 @@
                             </div>
                             <ul class="nav flex-column justify-content-center align-items-center">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Link 1</a>
+                                    <a class="nav-link" asp-controller="Student" asp-action="InfoPage" asp-route-netid="@Model.student_netid">Info Page</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Link 2</a>
@@ -50,7 +50,7 @@
                 </nav>
 
                 <!-- Page content -->
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-4">
                     @RenderBody()
                 </main>
             </div>
