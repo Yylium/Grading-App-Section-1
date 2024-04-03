@@ -10,10 +10,10 @@
 @model Grading_App_Section_1.Models.ViewModels.JudgeScheduleViewModel
 
 
-<div style="width: 40%; background-color: lightblue; padding: 20px; margin-left: auto; margin-right: auto;">
+<div>
     <div>
-        <h1>Judging</h1>
-        <table>
+        <h1 class="text-nextex-paragraph bold">Judging</h1>
+        <table class="rounded-table">
             <tr>
                 <th>Room Number</th>
                 <th>Judges Count</th> <!-- Adjust the header if needed -->
@@ -32,13 +32,10 @@
         </table>
         <a class="btn btn-primary" asp-controller="TeacherAdmin" asp-action="AddRoom">Add Room</a>
 
+        <br />
+        <br />
 
-
-
-
-
-
-        <table>
+        <table class ="rounded-table">
             <tr>
                 <th>Judge Name</th>
                 <th>Assigned Room</th>
