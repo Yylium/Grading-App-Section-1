@@ -13,26 +13,26 @@ namespace Grading_App_Section_1.Controllers
         }
         public IActionResult Index()
         {
-
+            return null;
         }
         public IActionResult Schedule()
         {
-            return View();
+            return null;
         }
 
         public IActionResult Survey()
         {
-            return View();
+            return null;
         }
 
         public IActionResult Dashboard()
         {
-            return View();
+            return null;
         }
         
         public IActionResult Rankings()
         {
-            return View();
+            return null;
         }
         
     }
