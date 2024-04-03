@@ -3,6 +3,7 @@
 *@
 @{
 }
+@model List<Student>
 
 <style>
     .rating-container {
@@ -62,8 +63,17 @@
             <p>dashboard?</p>
         </div>
         <div class="container col-8">
-            <h1>group name</h1>
-            <h2>group members?</h2>
+            <h1>Group @Model[0].group_id</h1>
+            <div>
+                <h3>
+                    @foreach (Student s in Model)
+                    {
+                        @s.first_name @Html.Raw(" ") @s.last_name @Html.Raw("&nbsp;") <!-- Add space between names -->
+                    }
+                </h3>
+            </div>
+
+            
             <div class="card m-1 p-3 bg-light">
                 <!-- Show all the required fields. The price will be in the top right and a different color-->
                 <h4 style="text-align: center; color: #094067">Overall System Quality and Client Satisfaction</h4>
