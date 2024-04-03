@@ -3,7 +3,7 @@
 }
 @model Grading_App_Section_1.Models.Student
 
-<form method="post" action="YourController/YourAction" class="container mt-5">
+<form method="post" action="Student/LinkSubmission/" class="container mt-5">
     <div class="text-center">
         <h1 class="display-4">Hello @Model.first_name</h1>
         <br />
@@ -14,7 +14,7 @@
                 @*                 <i class="bi bi-trash"></i>
                 *@                <button class="btn btn-danger" type="delete">Delete icon</button>
                 @*                 <i class="bi bi-pencil"></i><
-                *@                <button class="btn btn-secondary" type="button" asp-controller="Student" asp-action="Edit" asp-route-id="@x.group_id">Edit icon</button>
+                *@                <button class="btn btn-secondary" type="button" asp-controller="Student" asp-action="Edit" asp-route-id="@Model.group_id">Edit icon</button>
             </div>
         </div>
         <br />
