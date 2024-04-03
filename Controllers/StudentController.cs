@@ -87,5 +87,15 @@ namespace Grading_App_Section_1.Controllers
             
             return View("InfoPage", info);
         }
+
+        public IActionResult Resubmit()
+        {
+            return null;
+        }
+        
+        public IActionResult Submit()
+        {
+            return null;
+        }
     }
 }
