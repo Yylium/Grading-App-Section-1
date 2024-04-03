@@ -19,9 +19,9 @@ namespace Grading_App_Section_1.Controllers
             var netid = "ctg34";
             
             var creed = _repo.Students
-                .Where(x => x.student_netid == netid)
-                .FirstOrDefault();
-            return View("~/Views/Home/Student/LinkSubmission.cshtml", creed);
+                .SingleOrDefault(x => x.student_netid == netid);
+            
+            return View("LinkSubmission", creed);
         }
 
         [HttpPost]
@@ -46,7 +46,7 @@ namespace Grading_App_Section_1.Controllers
             var recordToEdit = _repo.Student_Groups
                 .Single(x => x.group_id == id);
             
-            return View("~/Views/Home/Student/Edit.cshtml");
+            return View("Edit");
         }
 
         [HttpPost]
@@ -55,7 +55,7 @@ namespace Grading_App_Section_1.Controllers
             if (ModelState.IsValid)
             {
                 //_repo.Student_Groups.Update(groupInfo);
-                return View("~/Views/Home/Student/Edit.cshtml");
+                return View("Edit");
             }
             
             return RedirectToAction("LinkSubmission");
@@ -85,7 +85,7 @@ namespace Grading_App_Section_1.Controllers
                 student_netid = studentinfo.student_netid
             };
             
-            return View("~/Views/Home/Student/InfoPage.cshtml", info);
+            return View("InfoPage", info);
         }
     }
 }

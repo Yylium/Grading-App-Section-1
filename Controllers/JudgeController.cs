@@ -11,10 +11,6 @@ namespace Grading_App_Section_1.Controllers
         {
             _repo = temp;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
         public IActionResult Schedule()
         {
             return View();
@@ -30,12 +26,12 @@ namespace Grading_App_Section_1.Controllers
 
         public IActionResult Dashboard()
         {
-            return View();
+            return View("JudgeDashboard");
         }
         
         public IActionResult Rankings()
         {
-            return View();
+            return null;
         }
         
     }

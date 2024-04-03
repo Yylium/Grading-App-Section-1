@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Views\Student\_ViewStart.cshtml.cs" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\InfoPage.cshtml" />
+    <Content Include="Views\Student\LinkSubmission.cshtml" />
+    <Content Include="Views\Student\_ViewStart.cshtml" />
     <PackageReference Include="heroiconstaghelper" Version="2.0.18" />
     <Compile Remove="Views\Student\**" />
     <Content Remove="Views\Student\**" />
@@ -18,6 +23,20 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Home\Student\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Student\InfoPage.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Student\LinkSubmission.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Student\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Views\Student\Edit.cshtml" />
+    <AdditionalFiles Include="Views\Student\InfoPage.cshtml" />
+    <AdditionalFiles Include="Views\Student\LinkSubmission.cshtml" />
+    <AdditionalFiles Include="Views\Student\_ViewStart.cshtml" />
   </ItemGroup>
 
 </Project>
