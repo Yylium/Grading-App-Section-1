@@ -19,7 +19,9 @@
                 <input asp-for="password_hash" type="password" class="form-control" placeholder="ex: firstLast" />
                 <br />
                 <label>Current Room Assignment:</label>
-@*                 <select asp-for="schedule_room" class="form-control">
+                
+@*                This needs to be updated to have the list of rooms dropdown. 
+                    <select asp-for="schedule_room" class="form-control">
                     <option value="">Select a Room</option>
                     @foreach (var room in Model.schedule_room)
                     {

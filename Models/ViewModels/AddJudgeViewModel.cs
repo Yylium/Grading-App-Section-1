@@ -8,6 +8,7 @@ namespace Grading_App_Section_1.Models.ViewModels
         public string first_name { get; set; }
         [Required(ErrorMessage = "Last Name is required")]
         public string last_name { get; set; }
+        //Need to set password- here or another file?
         [Required(ErrorMessage = "Password is required")]
         public string password_hash { get; set; }
         // If a judge can be assigned to multiple rooms
