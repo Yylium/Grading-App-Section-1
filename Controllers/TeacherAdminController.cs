@@ -139,7 +139,7 @@ namespace Grading_App_Section_1.Controllers
         }
         public IActionResult JudgeDash()
         {
-            var schedules = _repo.Schedules.ToList();
+            var schedules = _repo.Schedules;
             var roomAssignments = schedules
                 .GroupBy(s => s.schedule_room)
                 .Select(group => new RoomAssignment
@@ -151,7 +151,7 @@ namespace Grading_App_Section_1.Controllers
 
             var viewModel = new JudgeScheduleViewModel
             {
-                Judges = _repo.Judges.ToList(),
+                Judges = _repo.Judges,
                 Schedules = schedules,
                 RoomAssignments = roomAssignments
             };
