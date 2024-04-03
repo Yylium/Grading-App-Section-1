@@ -13,16 +13,19 @@ namespace Grading_App_Section_1.Controllers
         }
         public IActionResult Index()
         {
-
+            return View();
         }
         public IActionResult Schedule()
         {
             return View();
         }
 
-        public IActionResult Survey()
+        public IActionResult Survey(int groupId = 1)
         {
-            return View();
+            var students = _repo.Students
+                .Where(x => x.group_id == groupId).ToList();
+            
+            return View(students);
         }
 
         public IActionResult Dashboard()

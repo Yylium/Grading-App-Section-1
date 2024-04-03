@@ -37,213 +37,213 @@ namespace Grading_App_Section_1.Models
         //Please be careful when editing and adding methods as this will easily break the GradingApp
 
         //Team 1 Methods
-        public void Team1Method1()
-        {
-        }
-        public void Team1Method2()
-        {
-        }
-        public void Team1Method3()
-        {
-        }
-        public void Team1Method4()
-        {
-        }
-
-        //Team 2 Methods
-        public void Team2Method1()
-        {
-        }
-        public void Team2Method2()
-        {
-        }
-        public void Team2Method3()
-        {
-        }
-        public void Team2Method4()
-        {
-        }
-
-        //Team 3 Methods
-        public void Team3Method1()
-        {
-        }
-        public void Team3Method2()
-        {
-        }
-        public void Team3Method3()
-        {
-        }
-        public void Team3Method4()
-        {
-        }
-
-        //Team 4 Methods
-        public void Team4Method1()
-        {
-        }
-        public void Team4Method2()
-        {
-        }
-        public void Team4Method3()
-        {
-        }
-        public void Team4Method4()
-        {
-        }
-
-        //Team 5 Methods
-        public void Team5Method1()
-        {
-        }
-        public void Team5Method2()
-        {
-        }
-        public void Team5Method3()
-        {
-        }
-        public void Team5Method4()
-        {
-        }
-
-        //Team 6 Methods
-        public void Team6Method1()
-        {
-        }
-        public void Team6Method2()
-        {
-        }
-        public void Team6Method3()
-        {
-        }
-        public void Team6Method4()
-        {
-        }
-
-        //Team 7 Methods
-        public void Team7Method1()
-        {
-        }
-        public void Team7Method2()
-        {
-        }
-        public void Team7Method3()
-        {
-        }
-        public void Team7Method4()
-        {
-        }
-
-        //Team 8 Methods
-        public void Team8Method1()
-        {
-        }
-        public void Team8Method2()
-        {
-        }
-        public void Team8Method3()
-        {
-        }
-        public void Team8Method4()
-        {
-        }
-
-        //Team 9 Methods
-        public void Team9Method1()
-        {
-        }
-        public void Team9Method2()
-        {
-        }
-        public void Team9Method3()
-        {
-        }
-        public void Team9Method4()
-        {
-        }
-
-        //Team 10 Methods
-        public void Team10Method1()
-        {
-        }
-        public void Team10Method2()
-        {
-        }
-        public void Team10Method3()
-        {
-        }
-        public void Team10Method4()
-        {
-        }
-
-        //Team 11 Methods
-        public void Team11Method1()
-        {
-        }
-        public void Team11Method2()
-        {
-        }
-        public void Team11Method3()
-        {
-        }
-        public void Team11Method4()
-        {
-        }
-
-        //Team 12 Methods
-        public void Team12Method1()
-        {
-        }
-        public void Team12Method2()
-        {
-        }
-        public void Team12Method3()
-        {
-        }
-        public void Team12Method4()
-        {
-        }
-
-        //Team 13 Methods
-        public void Team13Method1()
-        {
-        }
-        public void Team13Method2()
-        {
-        }
-        public void Team13Method3()
-        {
-        }
-        public void Team13Method4()
-        {
-        }
-
-        //Team 14 Methods
-        public void Team14Method1()
-        {
-        }
-        public void Team14Method2()
-        {
-        }
-        public void Team14Method3()
-        {
-        }
-        public void Team14Method4()
-        {
-        }
-
-        //Team 15 Methods
-        public void Team15Method1()
-        {
-        }
-        public void Team15Method2()
-        {
-        }
-        public void Team15Method3()
-        {
-        }
-        public void Team15Method4()
-        {
-        }
+        // public void Team1Method1()
+        // {
+        // }
+        // public void Team1Method2()
+        // {
+        // }
+        // public void Team1Method3()
+        // {
+        // }
+        // public void Team1Method4()
+        // {
+        // }
+        //
+        // //Team 2 Methods
+        // public void Team2Method1()
+        // {
+        // }
+        // public void Team2Method2()
+        // {
+        // }
+        // public void Team2Method3()
+        // {
+        // }
+        // public void Team2Method4()
+        // {
+        // }
+        //
+        // //Team 3 Methods
+        // public void Team3Method1()
+        // {
+        // }
+        // public void Team3Method2()
+        // {
+        // }
+        // public void Team3Method3()
+        // {
+        // }
+        // public void Team3Method4()
+        // {
+        // }
+        //
+        // //Team 4 Methods
+        // public void Team4Method1()
+        // {
+        // }
+        // public void Team4Method2()
+        // {
+        // }
+        // public void Team4Method3()
+        // {
+        // }
+        // public void Team4Method4()
+        // {
+        // }
+        //
+        // //Team 5 Methods
+        // public void Team5Method1()
+        // {
+        // }
+        // public void Team5Method2()
+        // {
+        // }
+        // public void Team5Method3()
+        // {
+        // }
+        // public void Team5Method4()
+        // {
+        // }
+        //
+        // //Team 6 Methods
+        // public void Team6Method1()
+        // {
+        // }
+        // public void Team6Method2()
+        // {
+        // }
+        // public void Team6Method3()
+        // {
+        // }
+        // public void Team6Method4()
+        // {
+        // }
+        //
+        // //Team 7 Methods
+        // public void Team7Method1()
+        // {
+        // }
+        // public void Team7Method2()
+        // {
+        // }
+        // public void Team7Method3()
+        // {
+        // }
+        // public void Team7Method4()
+        // {
+        // }
+        //
+        // //Team 8 Methods
+        // public void Team8Method1()
+        // {
+        // }
+        // public void Team8Method2()
+        // {
+        // }
+        // public void Team8Method3()
+        // {
+        // }
+        // public void Team8Method4()
+        // {
+        // }
+        //
+        // //Team 9 Methods
+        // public void Team9Method1()
+        // {
+        // }
+        // public void Team9Method2()
+        // {
+        // }
+        // public void Team9Method3()
+        // {
+        // }
+        // public void Team9Method4()
+        // {
+        // }
+        //
+        // //Team 10 Methods
+        // public void Team10Method1()
+        // {
+        // }
+        // public void Team10Method2()
+        // {
+        // }
+        // public void Team10Method3()
+        // {
+        // }
+        // public void Team10Method4()
+        // {
+        // }
+        //
+        // //Team 11 Methods
+        // public void Team11Method1()
+        // {
+        // }
+        // public void Team11Method2()
+        // {
+        // }
+        // public void Team11Method3()
+        // {
+        // }
+        // public void Team11Method4()
+        // {
+        // }
+        //
+        // //Team 12 Methods
+        // public void Team12Method1()
+        // {
+        // }
+        // public void Team12Method2()
+        // {
+        // }
+        // public void Team12Method3()
+        // {
+        // }
+        // public void Team12Method4()
+        // {
+        // }
+        //
+        // //Team 13 Methods
+        // public void Team13Method1()
+        // {
+        // }
+        // public void Team13Method2()
+        // {
+        // }
+        // public void Team13Method3()
+        // {
+        // }
+        // public void Team13Method4()
+        // {
+        // }
+        //
+        // //Team 14 Methods
+        // public void Team14Method1()
+        // {
+        // }
+        // public void Team14Method2()
+        // {
+        // }
+        // public void Team14Method3()
+        // {
+        // }
+        // public void Team14Method4()
+        // {
+        // }
+        //
+        // //Team 15 Methods
+        // public void Team15Method1()
+        // {
+        // }
+        // public void Team15Method2()
+        // {
+        // }
+        // public void Team15Method3()
+        // {
+        // }
+        // public void Team15Method4()
+        // {
+        // }
     }
 }
