@@ -11,7 +11,7 @@ namespace Grading_App_Section_1.Models
         public required string last_name { get; set; }
         [ForeignKey("judge_team_id")]
         public int? judge_team_id { get; set; }
-        public Judge_Team? Judge_Team { get; set; }
+        // public Judge_Team? Judge_Team { get; set; }
 
     }
 }
