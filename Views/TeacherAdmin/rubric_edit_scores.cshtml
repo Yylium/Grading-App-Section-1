@@ -3,24 +3,34 @@
     Layout = "_TeachAdminLayout";
 }
 @model Grading_App_Section_1.Models.Rubric_Item
+<div class="container">
+    <h1 class="text-center">Add Objective</h1>
 
-<h1>Add Objective</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post">
+                <select asp-for="max_points" class="form-group">
+                    @for (int i = 1; i <= Model.max_points; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                    <option value="" selected>Possible Point(s)</option>
+                </select>
+                <br /><br />
+                <div class="form-group">
+                    <label asp-for="rubric_item_text">Objective Name</label>
+                    <input asp-for="rubric_item_text" />
+                </div>
+                <br /><br />
+                <div class="form-group">
+                    <label asp-for="rubric_item_details">Description</label>
+                    <input asp-for="rubric_item_details" />
+                </div>
+                <br /><br />
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-<form method="post">
-    <select asp-for="max_points">
-        <option value="">Possible Point(s)</option>
-        @for (int i = 1; i <= Model.max_points; i++)
-        {
-            <option value="@i">@i</option>
-        }
-    </select>
-    <br /><br />
-    <label asp-for="rubric_item_text">Objective Name</label>
-    <input asp-for="rubric_item_text" />
-    <br /><br />
-    <label asp-for="rubric_item_details">Description</label>
-    <input asp-for="rubric_item_details" />
-    <br /><br />
-    <button type="submit">Save</button>
-</form>
 

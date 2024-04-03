@@ -12,19 +12,21 @@
 
 @*Add up all of the points within a class*@
 @{
-    var totalPossiblePoints = @Model.Count();
+    var totalPossiblePoints = Model.Select(item => item.max_points).Sum();
 }
 
 <h1>@Model[0].class_number</h1>
 <h4>(@totalPossiblePoints possible points)</h4>
 
-<h2>Objectives</h2>
+<h2 class="text-center text-primary">Objectives</h2>
 
-<table>
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
             <td>Points Possible</td>
             <td>Objectives</td>
+            <td></td>
+            <td></td>
         </tr>
     </thead>
     <tbody>
@@ -32,12 +34,12 @@
         {
         <tr>
             <td>@rubricItem.max_points</td>
-            <td>@rubricItem.rubric_item_text <br /> @rubricItem.rubric_item_details</td>
+            <td>@rubricItem.rubric_item_text <br /> <small>@rubricItem.rubric_item_details</small></td>
 
             <td><a class="btn btn-info" asp-controller="TeacherAdmin" asp-action="Edit_Rubric_Item" asp-route-id="@rubricItem.rubric_item_id">Edit</a></td>
-            <td><a class="btn btn-danger" asp-controller="TeacherAdmin" asp-action="Delete_Rubric_Item" asp-route-id="@rubricItem">Delete</a></td>
+            <td><a class="btn btn-danger" asp-controller="TeacherAdmin" asp-action="Delete_Rubric_Item" asp-route-id="@rubricItem.rubric_item_id">Delete</a></td>
         </tr>
         }
     </tbody>
 </table>
-<a class="btn btn-primary" asp-controller="TeacherAdmin" asp-action="Add_Rubric_Item">Add Objective</a>
+<a class="btn button-add" asp-controller="TeacherAdmin" asp-action="Add_Rubric_Item" asp-route-classNum="@Model[0].class_number">Add Objective</a>

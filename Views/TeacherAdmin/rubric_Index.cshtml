@@ -1,11 +1,11 @@
 ﻿@{
-    ViewBag.Title = "Rubric Index";
+    ViewBag.Title = "Rubric";
     Layout = "_TeachAdminLayout";
 }
 
 @model List<Rubric_Item>
 
-<h1>Rubric Index</h1>
+<h1 class="text-center">Rubric</h1>
 
 @{
     // Get distinct class numbers
@@ -16,24 +16,24 @@
         .ToDictionary(group => group.Key, group => group.Count());
 }
     
-<div class="card-container">
+<div class="row d-flex flex-row justify-content-center m-3">
     @foreach (var classNum in distinctClassNumbers)
     {
-        <a asp-controller="TeacherAdmin" asp-action="View_Rubric_Category" asp-route-category="@classNum">
-            <div class="card">
-                <h1>
-                    @if (classNum > 000)
+        <div class="card col-3">
+            <a asp-controller="TeacherAdmin" asp-action="View_Rubric_Category" asp-route-category="@classNum">
+                <h1 class="card-header">
+                    @if (classNum < 1)
                     {
-                        <text>Presentation</text>
+                        <span>Presentation</span>
                     }
                     else
                     {
-                        <text>IS @classNum</text>
+                        <span>IS @classNum</span>
                     }
                 </h1>
-                <div class="subtitle">20% of overall</div>
-                <div class="subtitle">@classNumberCounts[classNum]</div>
+                <div class="card-content">20% of overall</div>
+                <div class="card-content">@classNumberCounts[classNum] requirement</div>
+            </a>
             </div>
-        </a>
     }
 </div>

@@ -70,7 +70,7 @@ namespace Grading_App_Section_1.Controllers
             _repo.Team7Method3_2(ta_netid);
             return RedirectToAction("ta_index");
         }
-
+        
         public IActionResult View_Rubric_Category(int category)
         {
             var categoryToDisplay = _repo.Rubric_Items
@@ -113,9 +113,12 @@ namespace Grading_App_Section_1.Controllers
 
         // Methods to add a new rubric item
         [HttpGet]
-        public IActionResult Add_Rubric_Item()
+        public IActionResult Add_Rubric_Item(int classNum)
         {
-            return View("rubric_edit_scores", new Rubric_Item());
+            var item = _repo.Rubric_Items
+                .FirstOrDefault(x => x.class_number == classNum);
+            
+            return View("rubric_edit_scores", item);
         }
         [HttpPost]
         public IActionResult Add_Rubric_Item(Rubric_Item addedItem)
