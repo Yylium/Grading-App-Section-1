@@ -36,7 +36,7 @@
   border: 2px solid var(--color-dark-blue);
   border-radius: 15px;
   padding: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
   box-shadow: 0 4px 8px var(--color-black-transparent);
 }
 

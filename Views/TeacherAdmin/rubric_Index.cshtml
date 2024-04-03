@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Rubric";
+    Layout = "_TeachAdminLayout";
+}
+
+@model List<Rubric_Item>
+
+<h1 class="text-center">Rubric</h1>
+
+@{
+    // Get distinct class numbers
+    var distinctClassNumbers = Model.Select(item => item.class_number).Distinct();
+
+    // Get count of each class number
+    var classNumberCounts = Model.GroupBy(item => item.class_number)
+        .ToDictionary(group => group.Key, group => group.Count());
+}
+    
+<div class="row d-flex flex-row justify-content-center m-3">
+    @foreach (var classNum in distinctClassNumbers)
+    {
+        <div class="card col-3">
+            <a asp-controller="TeacherAdmin" asp-action="View_Rubric_Category" asp-route-category="@classNum">
+                <h1 class="card-header">
+                    @if (classNum < 1)
+                    {
+                        <span>Presentation</span>
+                    }
+                    else
+                    {
+                        <span>IS @classNum</span>
+                    }
+                </h1>
+                <div class="card-content">20% of overall</div>
+                <div class="card-content">@classNumberCounts[classNum] requirement</div>
+            </a>
+            </div>
+    }
+</div>

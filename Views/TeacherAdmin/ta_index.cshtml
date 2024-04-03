@@ -2,17 +2,21 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewBag.Title = "TA Page";
+    Layout = "_TeachAdminLayout";
 }
 
-@*@model -----*@
+@model List<TA>
 
-<h1>TA's</h1>
+<h1 class="text-center">TA's</h1>
 
-<table>
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
             <td>TA Name</td>
             <td>Assigned Class</td>
+            <td></td>
+            <td></td>
         </tr>
     </thead>
     <tbody>
@@ -20,7 +24,7 @@
         {
         <tr>
             <td>@x.first_name @x.last_name</td>
-            <td>@x.class_assignment</td>
+            <td>@x.class_number</td>
 
             <td><a class="btn btn-info" asp-controller="TeacherAdmin" asp-action="Edit_ta" asp-route-id="@x.ta_netid">Edit</a></td>
             <td><a class="btn btn-danger" asp-controller="TeacherAdmin" asp-action="Delete_ta" asp-route-id="@x.ta_netid">Delete</a></td>
@@ -28,5 +32,5 @@
         }
     </tbody>
 </table>
-<button type="sumbit" asp-controller="TeacherAdmin" asp-action="Add_ta">Add TA</button>
+<button type="submit" asp-controller="TeacherAdmin" asp-action="Add_ta">Add TA</button>
 

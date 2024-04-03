@@ -21,10 +21,10 @@
                         <div>
                             <ul class="nav flex-column justify-content-center align-items-center">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/TeacherAdmin/Dashboard">Dashboard</a>
+                                    <a class="nav-link" asp-controller="TeacherAdmin" asp-action="Dashboard">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Rubric</a>
+                                    <a class="nav-link" asp-controller="TeacherAdmin" asp-action="View_Rubric">Rubric</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Survey</a>
@@ -33,16 +33,16 @@
                                     <a class="nav-link" href="#">Schedule</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Judging</a>
+                                    <a class="nav-link" asp-controller="TeacherAdmin" asp-action="JudgeView">Judging</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">TAs</a>
+                                    <a class="nav-link" asp-controller="TeacherAdmin" asp-action="ta_index">TAs</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Master Grades</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/TeacherAdmin/JudgeSummary">Judge Summary</a>
+                                    <a class="nav-link" asp-controller="TeacherAdmin" asp-action="JudgeSummary">Judge Summary</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Fun Awards</a>
