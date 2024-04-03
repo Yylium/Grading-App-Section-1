@@ -25,15 +25,18 @@ namespace Grading_App_Section_1.Controllers
         }
 
         [HttpPost]
-        public IActionResult LinkSubmission(Student_Group s)
+        public IActionResult LinkSubmission(string submissionLink, int groupId)
         {
-            if (ModelState.IsValid) 
+            var group = new Student_Group
             {
-                _repo.Student_Groups.Add(s);
-                return View(s);
-            }
+                group_id = groupId,
+                submission_link = submissionLink
+            };
+            _repo.Student_Groups.Add(group);
+            //_repo.SaveChanges();
             
-            return View(); 
+            
+            return RedirectToAction("LinkSubmission"); 
         }
         
         // Build Controllers for Edit and Delete
@@ -52,7 +55,7 @@ namespace Grading_App_Section_1.Controllers
             if (ModelState.IsValid)
             {
                 //_repo.Student_Groups.Update(groupInfo);
-                return View();
+                return View("~/Views/Home/Student/Edit.cshtml");
             }
             
             return RedirectToAction("LinkSubmission");
