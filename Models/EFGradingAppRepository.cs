@@ -141,9 +141,9 @@ namespace Grading_App_Section_1.Models
             _context.Rubric_Items.Remove(rubricItem);
             _context.SaveChanges();
         }
-        public void Team7Method3_2(TA ta_netid)
+        public void Team7Method3_2(TA ta)
         {
-            _context.TAs.Remove(ta_netid);
+            _context.TAs.Remove(ta);
             _context.SaveChanges();
         }
         public void Team7Method4()

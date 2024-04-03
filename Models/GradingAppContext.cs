@@ -22,5 +22,4 @@ namespace Grading_App_Section_1.Models
         public DbSet<TA> TAs { get; set; }
         public DbSet<Login_Table> Login_Tables { get; set; }
     }
-
 }

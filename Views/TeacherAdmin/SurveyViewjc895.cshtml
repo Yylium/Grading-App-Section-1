@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    Layout = null; // or your layout page
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+    <!-- Include stylesheets and scripts as needed -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="~/js/script.js"></script>
+</head>
+<body>
+    <div id="container">
+        <aside id="sidebar">
+            <!-- Sidebar with navigation -->
+            <nav>
+                <ul>
+                    <li><a href="#judge-assumptions">Judge Assumptions</a></li>
+                    <li><a href="#case-description">Case Description</a></li>
+                    <!-- Add more list items for each navigation link -->
+                </ul>
+            </nav>
+        </aside>
+        <main id="content">
+            <section id="judge-assumptions">
+                <h2>Judge Assumptions</h2>
+                <p>This is where the assumptions the judges are supposed to make will go...</p>
+                <!-- Possibly include form inputs or other interactive elements -->
+            </section>
+
+            <section id="case-description">
+                <h2>Case Description</h2>
+                <p>This is where the case description will go...</p>
+                <!-- Additional content -->
+            </section>
+
+            <!-- More sections for each part of the survey -->
+
+            <section id="questions">
+                <h2>Overall System Quality and Client Satisfaction</h2>
+                <form method="post">
+                    <label for="question1">How effective was the team in building a solution that meets the client’s needs?</label>
+                    <textarea id="question1" name="question1"></textarea>
+
+                    <!-- Include other questions and form elements -->
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

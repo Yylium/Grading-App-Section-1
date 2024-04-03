@@ -1,5 +1,7 @@
 ﻿using Grading_App_Section_1.Models;
 using Microsoft.AspNetCore.Mvc;
+using Grading_App_Section_1.Models.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Grading_App_Section_1.Controllers
 {
@@ -13,16 +15,71 @@ namespace Grading_App_Section_1.Controllers
         }
         public IActionResult Dashboard()
         {
-            return View();
+            int numGroups = 60;
+            int judgesPerGroup = 2;
+            int SurveyResponses = _repo.Survey_Responses.Count();
+
+            var ItemsGraded401 = _repo.Rubric_Item_Grades
+                .Join(_repo.Rubric_Items,
+                    rubricGrade => rubricGrade.rubric_item_id,
+                    rubricItem => rubricItem.rubric_item_id,
+                    (rubricGrade, rubricItem) => new { rubricGrade, rubricItem })
+                .Where(x => x.rubricItem.class_number == 401)
+                .Select(x => x.rubricGrade)
+                .Count();
+
+            var ItemsGraded413 = _repo.Rubric_Item_Grades
+                .Join(_repo.Rubric_Items,
+                    rubricGrade => rubricGrade.rubric_item_id,
+                    rubricItem => rubricItem.rubric_item_id,
+                    (rubricGrade, rubricItem) => new { rubricGrade, rubricItem })
+                .Where(x => x.rubricItem.class_number == 413)
+                .Select(x => x.rubricGrade)
+                .Count();
+
+            var ItemsGraded414 = _repo.Rubric_Item_Grades
+                .Join(_repo.Rubric_Items,
+                    rubricGrade => rubricGrade.rubric_item_id,
+                    rubricItem => rubricItem.rubric_item_id,
+                    (rubricGrade, rubricItem) => new { rubricGrade, rubricItem })
+                .Where(x => x.rubricItem.class_number == 414)
+                .Select(x => x.rubricGrade)
+                .Count();
+
+            var ItemsGraded455 = _repo.Rubric_Item_Grades
+                .Join(_repo.Rubric_Items,
+                    rubricGrade => rubricGrade.rubric_item_id,
+                    rubricItem => rubricItem.rubric_item_id,
+                    (rubricGrade, rubricItem) => new { rubricGrade, rubricItem })
+                .Where(x => x.rubricItem.class_number == 455)
+                .Select(x => x.rubricGrade)
+                .Count();
+
+            var counts = (numGroups, judgesPerGroup, SurveyResponses, ItemsGraded401, ItemsGraded413, ItemsGraded414, ItemsGraded455);
+
+            return View(counts);
         }
 
         public IActionResult JudgeSummary()
         {
-            return View();
+            var data = _repo.Schedules.ToList();
+            var judges = _repo.Judges.ToList();
+            // var studentGroups = _repo.Student_Groups.ToList();
+
+            var model = new Tuple<List<Schedule>, List<Judge>>(data, judges);
+
+            return View(model);
         }
 
-        public IActionResult JudgeView()
+        public IActionResult JudgeView(int judge_team_id)
         {
+            var data = _repo.Schedules
+                         .Where(s => s.judge_team_id == judge_team_id)
+                         .ToList();
+            var judges = _repo.Judges.ToList();
+            var surveyResponses = _repo.Survey_Responses.ToList();
+
+            var model = new Tuple<List<Schedule>, List<Judge>, List<Survey_Response>>(data, judges, surveyResponses);
             return View();
         }
 
@@ -37,7 +94,8 @@ namespace Grading_App_Section_1.Controllers
         [HttpGet]
         public IActionResult ta_index()
         {
-            return View();
+            var items = _repo.TAs;
+            return View("ta_index", items);
         }
 
         [HttpPost] 
@@ -78,7 +136,7 @@ namespace Grading_App_Section_1.Controllers
             _repo.Team7Method3_2(ta_netid);
             return RedirectToAction("ta_index");
         }
-
+        
         public IActionResult View_Rubric_Category(int category)
         {
             var categoryToDisplay = _repo.Rubric_Items
@@ -121,9 +179,12 @@ namespace Grading_App_Section_1.Controllers
 
         // Methods to add a new rubric item
         [HttpGet]
-        public IActionResult Add_Rubric_Item()
+        public IActionResult Add_Rubric_Item(int classNum)
         {
-            return View("rubric_edit_scores", new Rubric_Item());
+            var item = _repo.Rubric_Items
+                .FirstOrDefault(x => x.class_number == classNum);
+            
+            return View("rubric_edit_scores", item);
         }
         [HttpPost]
         public IActionResult Add_Rubric_Item(Rubric_Item addedItem)
@@ -131,6 +192,63 @@ namespace Grading_App_Section_1.Controllers
             _repo.Team7Method1(addedItem);
 
             return RedirectToAction("View_Rubric_Category");
+        }
+        public IActionResult AddJudge()
+        {
+            return View();
+        }
+        public IActionResult AddRoom()
+        {
+            return View();
+        }
+        public IActionResult JudgeDash()
+        {
+            var schedules = _repo.Schedules;
+            var roomAssignments = schedules
+                .GroupBy(s => s.schedule_room)
+                .Select(group => new RoomAssignment
+                {
+                    RoomNumber = group.Key,
+                    JudgesCount = group.Select(s => s.judge_team_id).Distinct().Count()
+                })
+                .ToList();
+
+            var viewModel = new JudgeScheduleViewModel
+            {
+                Judges = _repo.Judges,
+                Schedules = schedules,
+                RoomAssignments = roomAssignments
+            };
+
+            return View(viewModel);
+        }
+
+        public IActionResult JudgeDetail(int id)
+        {
+            var judge = _repo.Judges.FirstOrDefault(j => j.judge_id == id);
+            if (judge == null)
+            {
+                return NotFound();
+            }
+            return View(judge);
+        }
+
+        public IActionResult RoomDetail(string roomNumber)
+        {
+            var schedulesInRoom = _repo.Schedules.Where(s => s.schedule_room == roomNumber).ToList();
+            // You might also want to fetch other details related to the room
+            return View(schedulesInRoom);
+        }
+
+
+        public IActionResult AddSurveyItem()
+        {
+            return View();
+        }
+        
+        public IActionResult EditJudge()
+        {
+            return RedirectToAction("JudgeDash");
         }
     }
 }
