@@ -29,7 +29,8 @@ namespace Grading_App_Section_1.Controllers
         [HttpGet]
         public IActionResult ta_index()
         {
-            return View();
+            var items = _repo.TAs;
+            return View("ta_index", items);
         }
 
         [HttpPost] 
