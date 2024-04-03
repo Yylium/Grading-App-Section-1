@@ -83,6 +83,15 @@ namespace Grading_App_Section_1.Controllers
             return View();
         }
 
+        public IActionResult ListofStudentSubmissions()
+        {
+            var students = _repo.Students;
+            return View();
+        }
+        public IActionResult funAwards()
+        {
+            return View(); 
+        }
         [HttpGet]
         public IActionResult ta_index()
         {
