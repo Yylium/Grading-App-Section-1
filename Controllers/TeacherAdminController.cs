@@ -85,6 +85,7 @@ namespace Grading_App_Section_1.Controllers
 
         public IActionResult ListofStudentSubmissions()
         {
+            var students = _repo.Students;
             return View();
         }
         public IActionResult funAwards()

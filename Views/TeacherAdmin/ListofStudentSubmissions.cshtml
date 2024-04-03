@@ -1,13 +1,10 @@
 ﻿
 @{
     ViewData["Title"] = "ListofStudentSubmissions";
-}
-
-@{
     Layout = "_TeachAdminLayout";
 }
 
-@model 
+@model List<Student>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,11 +39,11 @@
             @foreach (var student in Model)
             {
                 <tr>
+                    <td>@student.student_netid</td>
+                    <td></td>
                     <td>@student.group_id</td>
-                    <td>@student.section_number</td>
-                    <td>@student.group_number</td>
-                    <td>@student.submission_link</td>
-                    <td>@student.group_modifier</td>
+                    <td></td>
+                    <td>@student.student_modifier</td>
                 </tr>
             }
         </tbody>
