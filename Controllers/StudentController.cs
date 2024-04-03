@@ -60,27 +60,21 @@ namespace Grading_App_Section_1.Controllers
             
             return RedirectToAction("LinkSubmission");
         }
-
+        [HttpGet]
         public IActionResult InfoPage(string netid)
         {
-            var studentinfo = _repo.Students.FirstOrDefault(s => s.student_netid == netid);
-            var groupId = studentinfo.group_id;
-            var groupsinfo = _repo.Student_Groups.FirstOrDefault(g => g.group_id == groupId);
+            var studentinfo = _repo.Students
+                .FirstOrDefault(s => s.student_netid == netid);
+            // var groupsinfo = _repo.Student_Groups.FirstOrDefault(g => g.group_id == 1);
+
+            var groupsinfo = _repo.GetStudentGroups();
 
             var info = new Student
             {
                 first_name = studentinfo.first_name,
                 group_id = studentinfo.group_id,
                 last_name = studentinfo.last_name,
-                Student_Group = new Student_Group
-                {
-                    group_id = groupsinfo.group_id,
-                    group_modifier = groupsinfo.group_modifier,
-                    group_number = groupsinfo.group_number,
-                    section_number = groupsinfo.section_number,
-                    submission_link = groupsinfo.submission_link
-
-                },
+                Student_Group = groupsinfo.FirstOrDefault(g => g.group_id == studentinfo.group_id),
                 student_modifier = studentinfo.student_modifier,
                 student_netid = studentinfo.student_netid
             };
