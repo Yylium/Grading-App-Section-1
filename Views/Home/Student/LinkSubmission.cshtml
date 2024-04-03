@@ -1,24 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Submission";
+    //student_netid needs to be replaced by the correct check for if the student has already submitted a link
+    bool hasExistingLink = Model.Student_Group != null && !string.IsNullOrEmpty(Model.Student_Group.submission_link);
 }
 @model Grading_App_Section_1.Models.Student
 
 <form method="post" action="Student/LinkSubmission/" class="container mt-5">
     <div class="text-center">
-        <h1 class="display-4">Hello @Model.first_name</h1>
+        <h1 class="display-4">Hello @Model.first_name!</h1>
         <br />
         <br />
-        <div class="input-group mb-3">
-            <input type="text" name="submissionLink" class="form-control" placeholder="Paste your group’s GitHub link here" aria-label="Group's GitHub Link" aria-describedby="basic-addon2">
+        <div class="input-group mb-3" style="display: flex; align-items: center;">
+            <input type="text" name="submissionLink" class="form-control" style="align-items: center; margin: 0;" placeholder="@(hasExistingLink ? Model.Student_Group.submission_link : "Paste your group’s GitHub link here")" aria-label="Group's GitHub Link" aria-describedby="basic-addon2">
             <div class="input-group-append">
-                @*                 <i class="bi bi-trash"></i>
-                *@                <button class="btn btn-danger" type="delete">Delete icon</button>
-                @*                 <i class="bi bi-pencil"></i><
-                *@                <button class="btn btn-secondary" type="button" asp-controller="Student" asp-action="Edit" asp-route-id="@Model.group_id">Edit icon</button>
+        @*         <button class="btn btn-danger" type="delete" style="margin-left:5px;"><i class="bi bi-trash"></i> Delete</button>
+                <button class="btn btn-secondary" type="button" asp-controller="Student" asp-action="Edit" asp-route-id="@Model.group_id"><i class="bi bi-pencil"></i> Edit</button> *@
             </div>
         </div>
+
         <br />
         <input type="hidden" name="groupId" value="@Model.group_id">
-        <button type="submit" class="btn btn-primary" >Submit Link</button>
+        @if (hasExistingLink)
+        {
+         <button class="btn btn-secondary" type="button" asp-controller="Student" asp-action="Resubmit" asp-route-id="@Model.group_id"> Resubmit Link</button>
+         }
+        else
+        {
+            <button type="submit" class="btn btn-primary" asp-controller="Student" asp-action="Submit" asp-route-id="@Model.group_id">Submit Link</button>
+        }
     </div>
 </form>
