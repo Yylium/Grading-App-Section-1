@@ -22,29 +22,29 @@ namespace Grading_App_Section_1.Models
         public DbSet<TA> TAs { get; set; }
         public DbSet<Login_Table> Login_Tables { get; set; }
     
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Judge>()
-                .HasOne(j => j.Judge_Team)
-                .WithMany()
-                .HasForeignKey(j => j.judge_team_id)
-                .IsRequired(true); 
-
-            modelBuilder.Entity<Schedule>()
-                .HasOne(s => s.Judge_Team)
-                .WithMany()
-                .HasForeignKey(s => s.judge_team_id)
-                .IsRequired(true); 
-
-            modelBuilder.Entity<Survey_Response>()
-                .HasOne(s => s.Judge)
-                .WithMany()
-                .HasForeignKey(s => s.judge_id)
-                .IsRequired(true); 
-
-            // Add other configurations here if needed
-
-            base.OnModelCreating(modelBuilder);
-        }
+        // protected override void OnModelCreating(ModelBuilder modelBuilder)
+        // {
+        //     modelBuilder.Entity<Judge>()
+        //         .HasOne(j => j.judge_id)
+        //         .WithMany()
+        //         .HasForeignKey(j => j.judge_team_id)
+        //         .IsRequired(true); 
+        //
+        //     modelBuilder.Entity<Schedule>()
+        //         .HasOne(s => s.schedule_id)
+        //         .WithMany()
+        //         .HasForeignKey(s => s.judge_team_id)
+        //         .IsRequired(true); 
+        //
+        //     modelBuilder.Entity<Survey_Response>()
+        //         .HasOne(s => s.survey_response_id)
+        //         .WithMany()
+        //         .HasForeignKey(s => s.judge_id)
+        //         .IsRequired(true); 
+        //
+        //     // Add other configurations here if needed
+        //
+        //     base.OnModelCreating(modelBuilder);
+        // }
     }
 }

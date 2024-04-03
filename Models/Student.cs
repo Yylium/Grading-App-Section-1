@@ -8,7 +8,7 @@ namespace Grading_App_Section_1.Models
         [Key]
         public int student_netid { get; set; }
 
-        [ForeignKey("Student_Group")]
+        [ForeignKey("group_id")]
         public required int group_id { get; set;  }
         public required Student_Group Student_Group { get; set; }
 

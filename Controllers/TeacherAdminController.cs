@@ -73,8 +73,7 @@ namespace Grading_App_Section_1.Controllers
 
         public IActionResult JudgeView(int judge_team_id)
         {
-            var data = _repo.Schedules.Include(s => s.Judge_Team)
-                         // .Include(s => s.group_id)
+            var data = _repo.Schedules
                          .Where(s => s.judge_team_id == judge_team_id)
                          .ToList();
             var judges = _repo.Judges.ToList();
