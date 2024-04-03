@@ -80,7 +80,7 @@ namespace Grading_App_Section_1.Controllers
             var surveyResponses = _repo.Survey_Responses.ToList();
 
             var model = new Tuple<List<Schedule>, List<Judge>, List<Survey_Response>>(data, judges, surveyResponses);
-            return View();
+            return View(model);
         }
 
         public IActionResult ListofStudentSubmissions()

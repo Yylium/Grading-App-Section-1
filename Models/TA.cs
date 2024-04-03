@@ -8,9 +8,9 @@ namespace Grading_App_Section_1.Models
         [Key]
         public string ta_netid { get; set; }
         [Required]
+        [ForeignKey("Admins_Teacher")]
         public int class_number { get; set; }
-        [ForeignKey("class_number")]
-        public Admins_Teacher Admins_Teacher { get; set; }
+        public virtual Admins_Teacher Admins_Teacher { get; set; }
 
         [Required]
         public string first_name { get; set; }

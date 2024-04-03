@@ -8,13 +8,13 @@ namespace Grading_App_Section_1.Models
         [Key]
         public int schedule_id {  get; set; }
         
-        [ForeignKey("judge_team_id")]
+        [ForeignKey("Judge_Team")]
         public int judge_team_id { get; set; }
-        public Judge_Team Judge_Team { get; set; }
+        public virtual Judge_Team Judge_Team { get; set; }
 
-        [ForeignKey("group_id")]
+        [ForeignKey("Student_Group")]
         public int group_id { get; set;  }
-        public Student_Group Student_Group { get; set; }
+        public virtual Student_Group Student_Group { get; set; }
         
         public required string schedule_room { get; set;}
         public required int schedule_time { get; set; }

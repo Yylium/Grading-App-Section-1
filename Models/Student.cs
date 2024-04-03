@@ -9,8 +9,7 @@ namespace Grading_App_Section_1.Models
         public string student_netid { get; set; }
         [ForeignKey("Student_Group")]
         public int group_id { get; set;  }
-        [Required]
-        public Student_Group Student_Group { get; set; }
+        public virtual Student_Group Student_Group { get; set; }
         [Required]
         public string first_name { get; set; }
         [Required]
