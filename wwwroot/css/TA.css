@@ -95,4 +95,15 @@
     justify-content: center;
 }
 
+#myProgress {
+    border-radius: 10px;
+    width: 100%;
+    background-color: lightgray;
+}
+#myBar {
+    border-radius: 10px;
+    width: 1%;
+    height: 30px;
+    background-color: cornflowerblue;
+}
 /* Add more specific styles as needed for other elements */

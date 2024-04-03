@@ -43,5 +43,12 @@ namespace Grading_App_Section_1.Controllers
 
             return View(rubric_Items);
         }
+
+        public IActionResult Dashboard()
+        {
+            var tatable = _repo.Rubric_Items.ToList();
+
+            return View(tatable);
+        }
     }
 }

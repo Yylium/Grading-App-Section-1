@@ -1,0 +1,91 @@
+@{
+    Layout = "_TALayout";
+}
+
+@model List<Rubric_Item>
+
+<h1 class="HelloAndrewIs414Ta" style="font-weight: bold">Hello, {TA Name}! IS {Class Name} TA</h1>
+
+@foreach (var x in Model)
+{
+    <p>@x.class_number</p>
+}
+<br />
+    <p>Submissions Graded</p>
+    <br />
+    <div id="myProgress">
+        <div id="myBar">0%</div>
+    </div>
+    <br />
+    <script>
+        var i = 0;
+        function onPageLoad() {
+            if (i == 0) {
+                i = 1;
+                var j = 0;
+                //replace the testArray with the validation of entries in the database; or maybe comparing to the entries completed from Lindsey and Elise's chart
+                var testArray = [1, 2, 3, 4, 5, 6, 7, 8];
+                var elem = document.getElementById("myBar");
+                var width = 0;
+                var id = setInterval(frame, 1);
+                function frame() {
+                    // update the .length once connected to database
+                    while (j < testArray.length) {
+                        if (width >= 100) {
+                            clearInterval(id);
+                            i = 0;
+                        }
+                        else {
+                            width = width + 10;
+                            elem.style.width = width + "%";
+                            elem.innerHTML = width + "%";
+                        }
+                        j++;
+                    }
+                }
+            }
+        }
+        window.onload = onPageLoad();
+    </script>
+    <div class="row">
+    </div>
+    <div class="row" style="font-weight: bold">
+        <div class="col">
+            <p>Status</p>
+        </div>
+        <div class="col">
+            <p>Section-Group</p>
+        </div>
+        <div class="col">
+            <p>Submission Member</p>
+        </div>
+        <div class="col">
+            <p>Github Link</p>
+        </div>
+    </div>
+    <!--X/X Groups Graded Line:-->
+    <!--calculate the total groups (loop through each rubric_item_grades object and increment by 1)-->
+    @*     @foreach g in Model.Rubric_Item_Score
+    {
+    count +=
+    }
+    <!--calculate the number of groups graded-->
+    @foreach g in Model.Rubric_Item_Score
+    {
+    <!--loop through the rubric_item_grades where grade_id isn't nuull (it's finished being graded) and increment by 1-->
+    if (@g.grade_id != null)
+    {
+    countGraded +=
+    }
+    } *@
+    <!--put the number of groups graded here (ex: 12/20)-->
+    <h4>countGraded / count Groups Graded</h4>
+
+
+
+
+
+
+
+
+
