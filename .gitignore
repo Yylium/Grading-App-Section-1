@@ -401,5 +401,5 @@ FodyWeavers.xsd
 .DS_Store
 *.db-shm
 *.db-wal
-*Migrations/
+Migrations/*
 *.db

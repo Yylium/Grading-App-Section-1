@@ -12,19 +12,19 @@
     <div class="container-fluid">
         <div class="row m-1 p-1">
             <!-- Navbar -->
-            <div class="col-2 d-none d-md-block bg-light sidebar">
-                <nav class="col-2 d-none d-md-block bg-light sidebar">
-                    <div class="sidebar-sticky">
-                        <div class="row align-items-center">
-                            <div class="col-12 text-center">
-                                <img src="~/nexuslogo.jpg" class="img-fluid" alt="Logo">
-                            </div>
+            <nav class="col-2 d-none d-md-block bg-light sidebar"> <!-- sidebar -->
+                <div class="col-2 d-none d-md-block bg-light sidebar-sticky">
+                    <div class="row align-items-center">
+                        <div class="col-12 text-center">
+                            <img src="~/Nexus.svg" class="nextex-logo" alt="Logo">
+                        </div>
+                        <div>
                             <ul class="nav flex-column justify-content-center align-items-center">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/TeacherAdmin/Dashboard">Dashboard</a>
+                                    <a class="nav-link" asp-controller="TeacherAdmin" asp-action="Dashboard">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Rubric</a>
+                                    <a class="nav-link" asp-controller="TeacherAdmin" asp-action="View_Rubric">Rubric</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Survey</a>
@@ -33,27 +33,26 @@
                                     <a class="nav-link" href="#">Schedule</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Judging</a>
+                                    <a class="nav-link" asp-controller="TeacherAdmin" asp-action="JudgeDash">Judging</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">TAs</a>
+                                    <a class="nav-link" asp-controller="TeacherAdmin" asp-action="ta_index">TAs</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Master Grades</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/TeacherAdmin/JudgeSummary">Judge Summary</a>
+                                    <a class="nav-link" asp-controller="TeacherAdmin" asp-action="JudgeSummary">Judge Summary</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Fun Awards</a>
                                 </li>
                                 <!-- Add more navbar links here -->
                             </ul>
-                            </div>
                         </div>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </nav>
 
             <!-- Page content -->
             <div class="container col-md-10 ml-md-auto px-4">
