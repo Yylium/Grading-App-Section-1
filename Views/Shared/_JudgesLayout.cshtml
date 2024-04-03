@@ -12,7 +12,9 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-                <!-- Navbar -->
+            
+            <!-- Navbar -->
+            <div class="col-md-2 d-none d-md-block bg-light sidebar">
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                     <div class="sidebar-sticky">
                         <div class="row align-items-center">
@@ -34,12 +36,17 @@
                         </div>
                     </div>
                 </nav>
+            </div>
+            
 
-                <!-- Page content -->
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <!-- Page content -->
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     @RenderBody()
                 </main>
             </div>
+           
+        </div>
         </div>
     
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
