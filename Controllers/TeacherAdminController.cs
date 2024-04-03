@@ -131,11 +131,11 @@ namespace Grading_App_Section_1.Controllers
         }
         public IActionResult AddJudge()
         {
-            return View("~/Views/TeacherAdmin/AddJudge.cshtml");
+            return View();
         }
         public IActionResult AddRoom()
         {
-            return View("~/Views/TeacherAdmin/AddRoom.cshtml");
+            return View();
         }
         public IActionResult JudgeDash()
         {
@@ -156,7 +156,7 @@ namespace Grading_App_Section_1.Controllers
                 RoomAssignments = roomAssignments
             };
 
-            return View("~/Views/TeacherAdmin/JudgeDash.cshtml", viewModel);
+            return View(viewModel);
         }
 
         public IActionResult JudgeDetail(int id)
@@ -179,7 +179,12 @@ namespace Grading_App_Section_1.Controllers
 
         public IActionResult AddSurveyItem()
         {
-            return View("~/Views/TeacherAdmin/AddSurveyItem.cshtml");
+            return View();
+        }
+        
+        public IActionResult EditJudge()
+        {
+            return RedirectToAction("JudgeDash");
         }
 
     }
