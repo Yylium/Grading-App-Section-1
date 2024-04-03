@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="card-deck">
+    @foreach (var course in Model.Courses)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">IS @course.Number</h5>
+                <p class="card-text">@course.GradedCount/@course.TotalCount Graded</p>
+            </div>
+        </div>
+    }
+</div>

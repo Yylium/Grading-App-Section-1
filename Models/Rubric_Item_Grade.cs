@@ -15,12 +15,14 @@ namespace Grading_App_Section_1.Models
 
         [Required]
         [ForeignKey("ta_netid")]
-        public string ta_netid { get;}
+        public string ta_netid { get; set; }
+        public TA TA {get; set; }
 
 
         [Required]
         [ForeignKey("rubric_item_id")]
         public int rubric_item_id { get; set; }
+        public  Rubric_Item Rubric_Item { get; set; }
 
         [Required]
         public int rubric_item_score { get; set; }

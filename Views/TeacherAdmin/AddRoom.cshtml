@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!--Here is a form to add a Judge to the database. Still watining on the database so I know what to add ass the input names-->
+
+@model Schedule
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <form action="#" method="POST">
+                <label asp-for="schedule_room">Room Name:</label><br>
+                <input asp-for="schedule_room" class="form-control" />
+
+                <button type="submit" class="btn btn-primary">Add</button>
+                <div asp-validation-summary="All"></div>
+            </form>
+        </div>
+    </div>
+</div>

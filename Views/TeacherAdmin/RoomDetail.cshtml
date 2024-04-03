@@ -1,0 +1,43 @@
+﻿@model List<Grading_App_Section_1.Models.Schedule>
+@{
+    ViewBag.Title = "Room Detail";
+}
+
+<h2>Room Detail</h2>
+
+@if (Model != null && Model.Any())
+{
+    var roomNumber = Model.First().schedule_room;
+    <h3>Room: @roomNumber</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Schedule Time</th>
+                <th>Judge Team ID</th>
+                <th>Group ID</th>
+                <!-- Add other schedule details as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schedule in Model)
+            {
+                <tr>
+                    <td>@schedule.schedule_time</td>
+                    <td>@schedule.judge_team_id</td>
+                    <td>@schedule.group_id</td>
+                    <!-- Display other schedule details here -->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No schedules found for this room.</p>
+}
+
+<div>
+    <!-- Html.ActionLink("Edit", "EditRoom", new { id = Model.schedule_id }) | -->
+    @Html.ActionLink("Back to List", "JudgeDash")
+</div>

@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "_TeachAdminLayout";
+}
+
+<div class="container">
+    <div class="header">
+        <h2>Fun Awards</h2>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Group</th>
+                <th>Award</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        @foreach (var Award in Model)
+        {
+            <tr>
+                <td>@Award.GroupName</td>
+                <td>@Award.AwardName</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
