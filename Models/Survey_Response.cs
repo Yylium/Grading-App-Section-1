@@ -12,7 +12,7 @@ namespace Grading_App_Section_1.Models
         public required int group_id { get; set; }
         public required Student_Group Student_Group { get; set; }
 
-        [ForeignKey("group_id")]
+        [ForeignKey("judge_id")]
         public required int judge_id { get; set; }
         public required Judge Judge { get; set; }
         
