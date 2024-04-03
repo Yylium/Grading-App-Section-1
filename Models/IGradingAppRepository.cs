@@ -62,7 +62,12 @@ namespace Grading_App_Section_1.Models
         // public void Team7Method4();
         //
         // //Team8 Methods
-        // public void Team8Method1();
+        public List<Student_Group> GetStudentGroups()
+        {
+            List<Student_Group> studentGroups = new List<Student_Group>();
+            studentGroups.Add(new Student_Group { group_id = 1, group_number = 3, group_modifier = 3, section_number = 1, submission_link = null} );
+            return studentGroups;
+        }
         // public void Team8Method2();
         // public void Team8Method3();
         // public void Team8Method4();
