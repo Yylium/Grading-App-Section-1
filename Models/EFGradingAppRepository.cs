@@ -79,9 +79,11 @@ namespace Grading_App_Section_1.Models
         // }
         //
         // //Team 4 Methods
-        // public void Team4Method1()
-        // {
-        // }
+        public void AddLink(Student_Group student_group)
+        {
+            _context.Add(student_group.submission_link);
+            _context.SaveChanges();
+        }
         // public void Team4Method2()
         // {
         // }

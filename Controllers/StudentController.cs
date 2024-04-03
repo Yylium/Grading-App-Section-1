@@ -21,22 +21,30 @@ namespace Grading_App_Section_1.Controllers
             var creed = _repo.Students
                 .Where(x => x.student_netid == netid)
                 .FirstOrDefault();
-            return View("~/Views/Home/Student/LinkSubmission.cshtml", creed);
+            return View("~/Views/Student/LinkSubmission.cshtml", creed);
         }
 
         [HttpPost]
-        public IActionResult LinkSubmission(string submissionLink, int groupId)
+        public IActionResult LinkSubmission(Student_Group student_group, string submissionLink, int groupId)
         {
-            var group = new Student_Group
+
+            if (ModelState.IsValid)
             {
-                group_id = groupId,
-                submission_link = submissionLink
-            };
-            _repo.Student_Groups.Add(group);
-            //_repo.SaveChanges();
-            
-            
-            return RedirectToAction("LinkSubmission"); 
+                _repo.AddLink(student_group);
+            }
+
+            return View();
+
+            //var group = new Student_Group
+            //{
+            //    group_id = groupId,
+            //    submission_link = submissionLink
+            //};
+            //_repo.Student_Groups.Add(group);
+            ////_repo.SaveChanges();
+
+
+            //return RedirectToAction("LinkSubmission"); 
         }
         
         // Build Controllers for Edit and Delete
@@ -46,7 +54,7 @@ namespace Grading_App_Section_1.Controllers
             var recordToEdit = _repo.Student_Groups
                 .Single(x => x.group_id == id);
             
-            return View("~/Views/Home/Student/Edit.cshtml");
+            return View("~/Views/Student/Edit.cshtml");
         }
 
         [HttpPost]
@@ -55,7 +63,7 @@ namespace Grading_App_Section_1.Controllers
             if (ModelState.IsValid)
             {
                 //_repo.Student_Groups.Update(groupInfo);
-                return View("~/Views/Home/Student/Edit.cshtml");
+                return View("~/Views/Student/Edit.cshtml");
             }
             
             return RedirectToAction("LinkSubmission");
@@ -85,7 +93,7 @@ namespace Grading_App_Section_1.Controllers
                 student_netid = studentinfo.student_netid
             };
             
-            return View("~/Views/Home/Student/InfoPage.cshtml", info);
+            return View("~/Views/Student/InfoPage.cshtml", info);
         }
     }
 }

@@ -16,6 +16,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Views\Student\_ViewStart.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\InfoPage.cshtml" />
+    <Content Include="Views\Student\LinkSubmission.cshtml" />
+    <Content Include="Views\Student\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3" />
   </ItemGroup>

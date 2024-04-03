@@ -37,7 +37,7 @@ namespace Grading_App_Section_1.Models
         // public void Team3Method4();
         //
         // //Team4 Methods
-        // public void Team4Method1();
+        public void AddLink(Student_Group student_group);
         // public void Team4Method2();
         // public void Team4Method3();
         // public void Team4Method4();
